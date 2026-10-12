@@ -1,64 +1,65 @@
-import logo from "@/public/fast-comm-logo.webp";
-import Image from "next/image";
 import Link from "next/link";
+import Logo from "./Logo";
+import { LogIn } from "lucide-react";
 import ActiveLink from "./ActiveLink";
 import SideBar from "./SideBar";
-
-const navLinks = [
-  {
-    id: "1",
-    name: "প্যাকেজ",
-    href: "/packages",
-  },
-  {
-    id: "2",
-    name: "বিল পরিশোধ",
-    href: "/billing-process",
-  },
-  {
-    id: "3",
-    name: "FTP সাপোর্ট",
-    href: "/ftp-services",
-  },
-  {
-    id: "5",
-    name: "আমাদের সম্পর্কে",
-    href: "/about-us",
-  },
-  {
-    id: "6",
-    name: "যোগাযোগ করুন",
-    href: "/contact-us",
-  },
-  {
-    id: "7",
-    name: "কাস্টমার পোর্টাল",
-    href: "",
-  },
-];
+import { ThemeToggle } from "./theme-toggle";
+import { MAIN_NAV_LINKS, PORTAL_LINK } from "@/lib/navigation";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   return (
-    <nav className="p-3 w-full border-b">
-      <div className="container mx-auto flex items-center justify-between">
-        <Link href={"/"}>
-          <Image
-            src={logo}
-            alt="ফাস্ট কমিউনিকেশন"
-            width={150}
-            height={64}
-            priority={true}
-          />
-        </Link>
-        <div className="hidden items-center gap-1 lg:flex">
-          {navLinks.map((link) => (
+    <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/85 backdrop-blur-md transition-all duration-200">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
+        {/* Brand Logo & Location Tag */}
+        <div className="flex items-center gap-3">
+          <Link
+            href="/"
+            className="flex items-center gap-2 transition-transform duration-200 hover:scale-[1.02]"
+            aria-label="ফাস্ট কমিউনিকেশন হোমপেজ"
+          >
+            <Logo />
+          </Link>
+        </div>
+
+        {/* Desktop Navigation Links */}
+        <nav
+          className="hidden items-center gap-1 lg:flex"
+          aria-label="মূল মেনু"
+        >
+          {MAIN_NAV_LINKS.map((link) => (
             <ActiveLink key={link.id} href={link.href}>
               {link.name}
             </ActiveLink>
           ))}
+        </nav>
+
+        {/* Action Controls & Mobile Trigger */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Theme Toggle on Desktop */}
+          <div className="hidden lg:flex">
+            <ThemeToggle />
+          </div>
+
+          {/* Customer Portal CTA Button */}
+          <a
+            href={PORTAL_LINK.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              buttonVariants({ variant: "default" }),
+              "hidden sm:inline-flex items-center gap-1.5 rounded-lg font-medium shadow-xs transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]",
+            )}
+          >
+            <LogIn className="size-3.5" />
+            <span>{PORTAL_LINK.name}</span>
+          </a>
+
+          {/* Mobile Sidebar Trigger */}
+          <SideBar />
         </div>
-        <SideBar />
       </div>
-    </nav>
+    </header>
   );
 }

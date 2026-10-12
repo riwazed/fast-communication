@@ -1,76 +1,179 @@
-import { Button } from "@/components/ui/button";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import {
+  Menu,
+  Package,
+  CreditCard,
+  Server,
+  Users,
+  PhoneCall,
+  LogIn,
+  ExternalLink,
+  Headphones,
+  Sparkles,
+} from "lucide-react";
+
+import Logo from "./Logo";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
-import Link from "next/link";
+import { MAIN_NAV_LINKS, PORTAL_LINK, type NavItem } from "@/lib/navigation";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { cn } from "@/lib/utils";
 
-const navLinks = [
-  {
-    id: "1",
-    name: "প্যাকেজ",
-    href: "/packages",
-  },
-  {
-    id: "2",
-    name: "বিল পরিশোধ",
-    href: "/billing-process",
-  },
-  {
-    id: "3",
-    name: "FTP সাপোর্ট",
-    href: "/ftp-services",
-  },
-  {
-    id: "7",
-    name: "আমাদের সম্পর্কে",
-    href: "/about-us",
-  },
-  {
-    id: "6",
-    name: "যোগাযোগ করুন",
-    href: "/contact-us",
-  },
-  {
-    id: "8",
-    name: "কাস্টমার পোর্টাল",
-    href: "https://portal.bcncommunication.net/customer/login",
-  },
-];
+const ICONS_MAP = {
+  Package,
+  CreditCard,
+  Server,
+  Users,
+  PhoneCall,
+  LogIn,
+};
 
 export default function SideBar() {
+  const pathname = usePathname();
+
   return (
     <aside className="lg:hidden">
       <Sheet>
-        <SheetTrigger>
-          <Button variant={"outline"} size={"icon"} className="hover:bg-white">
-            <Menu />
-          </Button>
+        <SheetTrigger
+          render={
+            <Button
+              variant="outline"
+              size="icon"
+              aria-label="মেনু খুলুন"
+              className="size-9 rounded-lg border-border/70 hover:bg-muted"
+            />
+          }
+        >
+          <Menu className="size-5" />
         </SheetTrigger>
-        <SheetContent>
-          <SheetHeader className="pb-0">
-            <SheetTitle>ফাস্ট কমিউনিকেশন</SheetTitle>
-            <SheetDescription>
-              আমাদের সেবা সমূহ এবং প্যাকেজ দেখুন। দ্রুত ও নির্ভরযোগ্য ইন্টারনেট
-              সংযোগের জন্য আমাদের সাথে যোগাযোগ করুন।
-            </SheetDescription>
+
+        <SheetContent side="right" className="flex flex-col p-0 sm:max-w-xs">
+          {/* Header */}
+          <SheetHeader className="border-b border-border/50 p-4 pb-3">
+            <div className="flex items-center justify-between">
+              <Link href="/" className="inline-block" aria-label="ফাস্ট কমিউনিকেশন হোমপেজ">
+                <Logo className="h-9 w-auto" />
+              </Link>
+            </div>
+            <SheetTitle className="sr-only">ফাস্ট কমিউনিকেশন মেনু</SheetTitle>
+            <div className="mt-2 flex items-center gap-1.5 rounded-md bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
+              <Sparkles className="size-3.5 shrink-0 text-primary" />
+              <span>শেরপুর জেলার বিশ্বস্ত ইন্টারনেট সেবা</span>
+            </div>
           </SheetHeader>
-          <Separator className="bg-gray-300" />
-          <div className="flex w-full flex-col gap-1.5 p-4">
-            {navLinks.map((link) => (
-              <SheetClose key={link.id}>
-                <Button className="w-full justify-center">
-                  <Link href={link.href}>{link.name}</Link>
-                </Button>
+
+          {/* Navigation Links */}
+          <div className="flex-1 overflow-y-auto px-3 py-3">
+            <p className="px-2 pb-2 text-[11px] font-semibold tracking-wider text-muted-foreground uppercase">
+              মেনু লিংকসমূহ
+            </p>
+            <nav className="flex flex-col gap-1">
+              {MAIN_NAV_LINKS.map((link: NavItem) => {
+                const IconComponent = ICONS_MAP[link.iconName];
+                const isActive =
+                  Boolean(link.href) &&
+                  (link.href === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(link.href));
+
+                return (
+                  <SheetClose
+                    key={link.id}
+                    render={
+                      <Link
+                        href={link.href}
+                        className={cn(
+                          "flex items-center justify-between rounded-lg px-3 py-2.5 text-[15px] font-medium transition-colors",
+                          isActive
+                            ? "bg-primary font-semibold text-primary-foreground shadow-xs"
+                            : "text-foreground/80 hover:bg-muted hover:text-foreground",
+                        )}
+                      />
+                    }
+                  >
+                    <span className="flex items-center gap-2.5">
+                      <IconComponent
+                        className={cn(
+                          "size-4.5 shrink-0",
+                          isActive
+                            ? "text-primary-foreground"
+                            : "text-muted-foreground",
+                        )}
+                      />
+                      <span>{link.name}</span>
+                    </span>
+                    {link.badge && (
+                      <span
+                        className={cn(
+                          "rounded-full px-2 py-0.5 text-[10px] font-semibold",
+                          isActive
+                            ? "bg-white/20 text-white"
+                            : "bg-primary/10 text-primary",
+                        )}
+                      >
+                        {link.badge}
+                      </span>
+                    )}
+                  </SheetClose>
+                );
+              })}
+            </nav>
+
+            <Separator className="my-4" />
+
+            {/* Customer Portal CTA in Drawer */}
+            <div className="rounded-xl border border-border/60 bg-muted/40 p-3">
+              <div className="mb-2">
+                <p className="text-xs font-semibold text-foreground">
+                  গ্রাহক সেবা ও বিল
+                </p>
+                <p className="text-[11px] text-muted-foreground">
+                  আপনার অ্যাকাউন্ট লগইন করে সংযোগ স্ট্যাটাস ও বিল চেক করুন
+                </p>
+              </div>
+              <SheetClose
+                render={
+                  <a
+                    href={PORTAL_LINK.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cn(
+                      buttonVariants({ variant: "default", size: "sm" }),
+                      "w-full justify-center gap-2 font-medium shadow-xs",
+                    )}
+                  />
+                }
+              >
+                <LogIn className="size-3.5" />
+                <span>{PORTAL_LINK.name}</span>
+                <ExternalLink className="size-3 opacity-70" />
               </SheetClose>
-            ))}
+            </div>
+          </div>
+
+          {/* Drawer Footer */}
+          <div className="border-t border-border/50 bg-background/50 p-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <Headphones className="size-3.5 text-primary" />
+                <span>২৪/৭ কাস্টমার সাপোর্ট</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-muted-foreground">থিম:</span>
+                <ThemeToggle />
+              </div>
+            </div>
           </div>
         </SheetContent>
       </Sheet>
