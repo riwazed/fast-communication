@@ -2,6 +2,7 @@ import logo from "@/public/fast-comm-logo.webp";
 import Image from "next/image";
 import Link from "next/link";
 import ActiveLink from "./ActiveLink";
+import SideBar from "./SideBar";
 
 const navLinks = [
   {
@@ -38,7 +39,7 @@ const navLinks = [
 
 export default function Navbar() {
   return (
-    <nav className="py-3 w-full border-b">
+    <nav className="p-3 w-full border-b">
       <div className="container mx-auto flex items-center justify-between">
         <Link href={"/"}>
           <Image
@@ -56,6 +57,7 @@ export default function Navbar() {
             </ActiveLink>
           ))}
         </div>
+        <SideBar />
       </div>
     </nav>
   );
