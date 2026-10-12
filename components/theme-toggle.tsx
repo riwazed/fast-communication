@@ -1,17 +1,9 @@
 "use client";
 
-import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 
-/**
- * ThemeToggle — a reusable button to switch between light and dark themes.
- *
- * Usage:
- *   import { ThemeToggle } from "@/components/theme-toggle";
- *   <ThemeToggle />
- */
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
 
