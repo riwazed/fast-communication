@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Anek_Bangla } from "next/font/google";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const anekBangla = Anek_Bangla({
   variable: "--font-anek-bangla",
-  subsets: ["bengali"],
+  subsets: ["bengali", "latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -19,8 +22,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="bn"
       className={`${anekBangla.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <TooltipProvider>{children}</TooltipProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
