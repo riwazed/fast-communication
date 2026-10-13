@@ -8,10 +8,7 @@ interface LogoProps {
   priority?: boolean;
 }
 
-export default function Logo({
-  className,
-  priority = true,
-}: LogoProps) {
+export default function Logo({ className, priority = true }: LogoProps) {
   return (
     <div className="relative inline-flex items-center">
       {/* Light Mode Logo */}
@@ -27,7 +24,10 @@ export default function Logo({
         src={LogoDarkMode}
         alt="ফাস্ট কমিউনিকেশন"
         priority={priority}
-        className={cn("hidden h-10 w-auto object-contain dark:block", className)}
+        className={cn(
+          "hidden h-10 w-auto object-contain dark:block",
+          className,
+        )}
       />
     </div>
   );
