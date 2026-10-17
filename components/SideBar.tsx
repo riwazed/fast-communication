@@ -10,7 +10,6 @@ import {
   Users,
   PhoneCall,
   LogIn,
-  ExternalLink,
   Headphones,
   Sparkles,
 } from "lucide-react";
@@ -62,7 +61,11 @@ export default function SideBar() {
           {/* Header */}
           <SheetHeader className="border-b border-border/50 p-4 pb-3">
             <div className="flex items-center justify-between">
-              <Link href="/" className="inline-block" aria-label="ফাস্ট কমিউনিকেশন হোমপেজ">
+              <Link
+                href="/"
+                className="inline-block"
+                aria-label="ফাস্ট কমিউনিকেশন হোমপেজ"
+              >
                 <Logo className="h-9 w-auto" />
               </Link>
             </div>
@@ -159,7 +162,6 @@ export default function SideBar() {
               >
                 <LogIn className="size-3.5" />
                 <span>{PORTAL_LINK.name}</span>
-                <ExternalLink className="size-3 opacity-70" />
               </SheetClose>
             </div>
           </div>

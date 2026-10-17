@@ -239,3 +239,64 @@
     font-family: inherit;
   }
 }
+
+/* -----------------------------------------------
+   Site Background Animations & Visual Depth
+   ----------------------------------------------- */
+@keyframes bg-drift-1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(25px, -20px, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(-15px, 15px, 0) scale(0.96);
+  }
+}
+
+@keyframes bg-drift-2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-25px, 18px, 0) scale(1.04);
+  }
+  100% {
+    transform: translate3d(15px, -15px, 0) scale(0.95);
+  }
+}
+
+@keyframes bg-pulse-soft {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+.animate-bg-drift-1 {
+  animation: bg-drift-1 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.animate-bg-drift-2 {
+  animation: bg-drift-2 26s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.animate-bg-pulse-soft {
+  animation: bg-pulse-soft 14s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-bg-drift-1,
+  .animate-bg-drift-2,
+  .animate-bg-pulse-soft {
+    animation: none !important;
+  }
+}

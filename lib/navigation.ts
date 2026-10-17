@@ -2,7 +2,13 @@ export interface NavItem {
   id: string;
   name: string;
   href: string;
-  iconName: "Package" | "CreditCard" | "Server" | "Users" | "PhoneCall" | "LogIn";
+  iconName:
+    | "Package"
+    | "CreditCard"
+    | "Server"
+    | "Users"
+    | "PhoneCall"
+    | "LogIn";
   badge?: string;
   isExternal?: boolean;
 }
@@ -13,7 +19,6 @@ export const MAIN_NAV_LINKS: NavItem[] = [
     name: "প্যাকেজ",
     href: "/packages",
     iconName: "Package",
-    badge: "জনপ্রিয়",
   },
   {
     id: "billing",

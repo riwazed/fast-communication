@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SiteBackground from "@/components/SiteBackground";
 
 const anekBangla = Anek_Bangla({
   variable: "--font-anek-bangla",
@@ -26,7 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${anekBangla.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col relative">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -34,8 +35,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           disableTransitionOnChange
         >
           <TooltipProvider>
+            <SiteBackground />
             <Navbar />
-            {children}
+            <main className="flex-1 relative z-0">{children}</main>
             <Footer />
           </TooltipProvider>
         </ThemeProvider>
