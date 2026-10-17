@@ -90,6 +90,7 @@ export default function SideBar() {
                 return (
                   <SheetClose
                     key={link.id}
+                    nativeButton={false}
                     render={
                       <Link
                         href={link.href}
@@ -143,6 +144,7 @@ export default function SideBar() {
                 </p>
               </div>
               <SheetClose
+                nativeButton={false}
                 render={
                   <a
                     href={PORTAL_LINK.href}
