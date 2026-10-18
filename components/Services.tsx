@@ -147,13 +147,6 @@ const SERVICES_DATA: ServiceItem[] = [
   },
 ];
 
-/**
- * Services Component
- *
- * Server-Side Rendered (SSR) Educational Services Section.
- * Transparently explains the authentic services provided by Fast Communication,
- * emphasizing fiber technology, local FTP benefits, digital billing, and support.
- */
 export default function Services() {
   return (
     <section
@@ -184,8 +177,8 @@ export default function Services() {
 
           <p className="mt-4 text-base text-muted-foreground sm:text-lg leading-relaxed">
             ফাস্ট কমিউনিকেশন কেবল একটি ইন্টারনেট সংযোগ নয়, বরং উচ্চগতির ডিজিটাল
-            জীবনযাপনের সম্পূর্ণ সমাধান। জেনে নিন আমাদের প্রতিটি সেবার বৈশিষ্ট্য ও
-            সুবিধাসমূহ:
+            জীবনযাপনের সম্পূর্ণ সমাধান। জেনে নিন আমাদের প্রতিটি সেবার বৈশিষ্ট্য
+            ও সুবিধাসমূহ:
           </p>
         </div>
 
@@ -296,7 +289,7 @@ export default function Services() {
                 </h4>
                 <p className="mt-1 text-xs sm:text-sm text-muted-foreground max-w-xl">
                   বাসার জন্য অপটিক্যাল ফাইবার, প্রাতিষ্ঠানিক ডেডিকেটেড ইন্টারনেট
-                  কিংবা লোকাল FTP সংযোগ — আমাদের অভিজ্ঞ টিম আপনাকে সঠিক প্যাকেজ
+                  কিংবা লোকাল FTP সংযোগ - আমাদের অভিজ্ঞ টিম আপনাকে সঠিক প্যাকেজ
                   নির্বাচনে সার্বক্ষণিক পরামর্শ দিয়ে সহায়তা করবে।
                 </p>
               </div>
