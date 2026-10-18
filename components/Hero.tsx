@@ -158,7 +158,7 @@ export default function Hero() {
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
                   </span>
-                  <span>অনলাইন • সক্রিয়</span>
+                  <span>অনলাইন</span>
                 </div>
               </div>
 

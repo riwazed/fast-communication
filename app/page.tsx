@@ -1,3 +1,4 @@
+import BestSellings from "@/components/BestSellings";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 
@@ -6,6 +7,7 @@ export default function LandingPage() {
     <>
       <Hero />
       <Services />
+      <BestSellings />
     </>
   );
 }
