@@ -1,3 +1,9 @@
+import Hero from "@/components/Hero";
+
 export default function LandingPage() {
-  return <>ফাস্ট কমিউনিকেশন</>;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 }
