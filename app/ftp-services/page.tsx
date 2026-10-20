@@ -3,7 +3,7 @@ import Link from "next/link";
 import {
   Server,
   Tv,
-  Film,
+  Radio,
   Download,
   ChevronRight,
   ShieldAlert,
@@ -25,7 +25,7 @@ import { Badge } from "@/components/ui/badge";
 export const metadata: Metadata = {
   title: "FTP মুভি সার্ভার ও লাইভ টিভি | ফাস্ট কমিউনিকেশন শেরপুর",
   description:
-    "ফাস্ট কমিউনিকেশন শেরপুর ব্রডব্যান্ড নেটওয়ার্কের সেরা হাই-স্পিড FTP মুভি সার্ভার, লাইভ টিভি চ্যানেল এবং এক্সক্লুসিভ অ্যান্ড্রয়েড অ্যাপস (AppoloTV ও StreamX) ডাউনলোড করুন। ১০০+ Mbps পর্যন্ত বাফারিংহীন স্ট্রিমিং।",
+    "ফাস্ট কমিউনিকেশন শেরপুর ব্রডব্যান্ড নেটওয়ার্কের সেরা হাই-স্পিড FTP মুভি সার্ভার, লাইভ টিভি চ্যানেল এবং এক্সক্লুসিভ লাইভ টিভি অ্যাপস (AppoloTV ও StreamX) ডাউনলোড করুন। ১০০+ Mbps পর্যন্ত বাফারিংহীন লাইভ স্ট্রিমিং।",
   keywords: [
     "Fast Communication FTP",
     "FTP Servers Sherpur",
@@ -83,7 +83,7 @@ export default function FtpServicesPage() {
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
               ফাস্ট কমিউনিকেশনের অপটিক্যাল ফাইবার নেটওয়ার্কে কোনো বাফারিং ছাড়াই উপভোগ করুন
               সর্বাধিক জনপ্রিয় ১২+ মুভি সার্ভার, ৬+ লাইভ টিভি পোর্টাল এবং সরাসরি ডাউনলোড
-              করুন আমাদের অফিসিয়াল অ্যাপস।
+              করুন আমাদের অফিসিয়াল লাইভ টিভি অ্যাপস।
             </p>
 
             {/* Network Requirement Notice Box */}
@@ -103,7 +103,7 @@ export default function FtpServicesPage() {
                 className="inline-flex items-center gap-1.5 rounded-xl border border-border/70 bg-card/80 px-3.5 py-1.5 text-xs font-medium text-foreground transition-all hover:border-primary/50 hover:bg-muted"
               >
                 <Download className="size-3.5 text-primary" />
-                <span>এক্সক্লুসিভ অ্যাপস (.APK)</span>
+                <span>এক্সক্লুসিভ লাইভ টিভি অ্যাপস (.APK)</span>
               </a>
               <a
                 href="#servers-directory"
@@ -147,18 +147,18 @@ export default function FtpServicesPage() {
               <div className="flex flex-col gap-3 text-center sm:text-left">
                 <div className="inline-flex items-center gap-2 self-center sm:self-start rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1 text-xs font-semibold text-primary">
                   <Sparkles className="size-3.5 text-brand-orange" />
-                  <span>এক্সক্লুসিভ অ্যান্ড্রয়েড অ্যাপস</span>
+                  <span>এক্সক্লুসিভ লাইভ টিভি অ্যাপস</span>
                 </div>
                 <h2
                   id="apps-heading"
                   className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
                 >
-                  স্মার্টফোন ও অ্যান্ড্রয়েড টিভির জন্য অফিসিয়াল স্ট্রিমিং অ্যাপ
+                  স্মার্টফোন ও অ্যান্ড্রয়েড টিভির জন্য অফিসিয়াল লাইভ টিভি অ্যাপস
                 </h2>
                 <p className="max-w-2xl text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  ফাস্ট কমিউনিকেশনের হাই-স্পিড BDIX নেটওয়ার্কে টিভি চ্যানেল ও মুভি
-                  আরও স্বাচ্ছন্দ্যে উপভোগ করতে আমাদের অফিসিয়াল অ্যাপ দুটি ফ্রিতে
-                  ডাউনলোড করুন।
+                  ফাস্ট কমিউনিকেশনের হাই-স্পিড BDIX নেটওয়ার্কে সকল দেশি-বিদেশি লাইভ টিভি
+                  চ্যানেল ও স্পোর্টস সম্প্রচার বাফারিং ছাড়া উপভোগ করতে আমাদের অফিসিয়াল লাইভ
+                  টিভি অ্যাপ দুটি ফ্রিতে ডাউনলোড করুন।
                 </p>
               </div>
 
@@ -198,9 +198,9 @@ export default function FtpServicesPage() {
                     </div>
 
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      সরাসরি ১০০+ দেশি ও আন্তর্জাতিক টিভি চ্যানেল, লাইভ ক্রিকেট ও ফুটবল
-                      ম্যাচ ফুল এইচডিতে দেখার জন্য আদর্শ অ্যাপ্লিকেশন। অ্যান্ড্রয়েড
-                      স্মার্ট টিভি রিমোটের সাথে শতভাগ সামঞ্জস্যপূর্ণ।
+                      সরাসরি ১০০+ দেশি ও আন্তর্জাতিক লাইভ টিভি চ্যানেল, স্পোর্টস ও ব্রেকিং
+                      নিউজ ফুল এইচডিতে দেখার জন্য জনপ্রিয় লাইভ টিভি অ্যাপ। অ্যান্ড্রয়েড স্মার্ট
+                      টিভি রিমোট ও মোবাইল টাচস্ক্রিনের সাথে শতভাগ সামঞ্জস্যপূর্ণ।
                     </p>
 
                     {/* Highlights */}
@@ -211,15 +211,15 @@ export default function FtpServicesPage() {
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="size-3.5 text-primary shrink-0" />
-                        <span>লাইভ স্পোর্টস ও খেলাধুলা</span>
+                        <span>লাইভ ক্রিকেট, ফুটবল ও স্পোর্টস</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="size-3.5 text-primary shrink-0" />
-                        <span>স্মার্ট টিভি ও টিভি বক্স সাপোর্টেড</span>
+                        <span>স্মার্ট টিভি ও টিভি বক্স রিমোট অপ্টিমাইজড</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="size-3.5 text-primary shrink-0" />
-                        <span>বাফারিং ছাড়া আল্ট্রা-লো লেটেন্সি</span>
+                        <span>বাফারিংহীন আল্ট্রা-লো লেটেন্সি লাইভ স্ট্রিম</span>
                       </li>
                     </ul>
                   </div>
@@ -248,7 +248,7 @@ export default function FtpServicesPage() {
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex items-center gap-4">
                         <div className="flex size-14 items-center justify-center rounded-2xl bg-brand-orange/10 text-brand-orange border border-brand-orange/20 shadow-sm">
-                          <Film className="size-7" />
+                          <Radio className="size-7" />
                         </div>
                         <div>
                           <div className="flex items-center gap-2">
@@ -259,11 +259,11 @@ export default function FtpServicesPage() {
                               variant="outline"
                               className="border-brand-orange/30 bg-brand-orange/10 text-brand-orange text-[11px]"
                             >
-                              মুভি ও সিরিজ
+                              লাইভ টিভি
                             </Badge>
                           </div>
                           <p className="text-xs text-muted-foreground">
-                            4K & HD Entertainment • সংস্করণ v1.8.2
+                            HD Live Broadcast • সংস্করণ v1.8.2
                           </p>
                         </div>
                       </div>
@@ -276,28 +276,28 @@ export default function FtpServicesPage() {
                     </div>
 
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      লেটেস্ট বাংলা, হিন্দি এবং হলিউড ব্লকব্লাস্টার মুভি ও জনপ্রিয়
-                      ওয়েব সিরিজের বিশাল কালেকশন। 4K রেজোলিউশন, ডুয়াল অডিও এবং
-                      বাংলা সাবটাইটেল সাপোর্টসহ প্রিমিয়াম স্ট্রিমিং অভিজ্ঞতা।
+                      উচ্চমানের লাইভ টিভি চ্যানেল সম্প্রচার ও বিনোদনমূলক চ্যানেল দেখার জন্য
+                      আরেকটি প্রিমিয়াম লাইভ টিভি অ্যাপ্লিকেশন। নিরবচ্ছিন্ন লাইভ ব্রডকাস্ট,
+                      এইচডি ক্লিয়ারিটি এবং একাধিক চ্যানেল ক্যাটাগরি সহজে উপভোগের সুবিধা।
                     </p>
 
                     {/* Highlights */}
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-foreground/90">
                       <li className="flex items-center gap-2">
                         <Check className="size-3.5 text-brand-orange shrink-0" />
-                        <span>হাজারো মুভি ও ওয়েব সিরিজ</span>
+                        <span>দেশি ও আন্তর্জাতিক লাইভ টিভি চ্যানেল</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="size-3.5 text-brand-orange shrink-0" />
-                        <span>ফুল এইচডি ও 4K আল্ট্রা ক্লিয়ারিটি</span>
+                        <span>লাইভ স্পোর্টস ও সংবাদ চ্যানেল ক্যাটাগরি</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="size-3.5 text-brand-orange shrink-0" />
-                        <span>বাংলা সাবটাইটেল সুবিধা</span>
+                        <span>স্মার্টফোন ও টিভি বক্স উভয়ের জন্য উপযুক্ত</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="size-3.5 text-brand-orange shrink-0" />
-                        <span>বিজ্ঞাপনমুক্ত মসৃণ প্লেব্যাক</span>
+                        <span>বিজ্ঞাপনমুক্ত মসৃণ লাইভ প্লেব্যাক</span>
                       </li>
                     </ul>
                   </div>
