@@ -20,15 +20,7 @@ async function CurrentYear() {
   return <>{new Date().getFullYear()}</>;
 }
 
-/**
- * Footer Component
- *
- * Server-Side Rendered (SSR) informative footer for Fast Communication.
- * Features comprehensive navigation, contact & NOC support details,
- * official business credentials, and the SSLCOMMERZ secure payment gateway banner.
- */
 export default function Footer() {
-
   return (
     <footer className="relative border-t border-border/70 bg-card/80 dark:bg-card/40 backdrop-blur-xl transition-colors">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
@@ -47,9 +39,10 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm text-muted-foreground leading-relaxed">
-              ফাস্ট কমিউনিকেশন — শেরপুর জেলার একটি বিশ্বস্ত ইন্টারনেট সেবা প্রদানকারী
-              প্রতিষ্ঠান। দ্রুতগতির অপটিক্যাল ফাইবার ব্রডব্যান্ড সংযোগ, বাফারিংহীন
-              BDIX ও সার্বক্ষণিক কাস্টমার কেয়ার প্রদানে আমরা অঙ্গীকারবদ্ধ।
+              ফাস্ট কমিউনিকেশন — শেরপুর জেলার একটি বিশ্বস্ত ইন্টারনেট সেবা
+              প্রদানকারী প্রতিষ্ঠান। দ্রুতগতির অপটিক্যাল ফাইবার ব্রডব্যান্ড
+              সংযোগ, বাফারিংহীন BDIX ও সার্বক্ষণিক কাস্টমার কেয়ার প্রদানে আমরা
+              অঙ্গীকারবদ্ধ।
             </p>
 
             {/* Quick Legal Credentials Badge */}
@@ -102,7 +95,10 @@ export default function Footer() {
             <h3 className="text-sm font-bold tracking-wider text-foreground uppercase">
               আমাদের সেবাসমূহ
             </h3>
-            <ul className="flex flex-col gap-2.5 text-sm text-muted-foreground" role="list">
+            <ul
+              className="flex flex-col gap-2.5 text-sm text-muted-foreground"
+              role="list"
+            >
               <li className="flex items-center gap-2">
                 <span className="size-1.5 rounded-full bg-primary shrink-0" />
                 <span>অপটিক্যাল ফাইবার ব্রডব্যান্ড (FTTH)</span>
@@ -135,9 +131,7 @@ export default function Footer() {
               {/* Location */}
               <div className="flex items-start gap-2.5">
                 <MapPin className="size-4.5 text-primary shrink-0 mt-0.5" />
-                <span>
-                  শেরপুর সদর, শেরপুর জেলা, ময়মনসিংহ বিভাগ, বাংলাদেশ।
-                </span>
+                <span>শেরপুর সদর, শেরপুর জেলা, ময়মনসিংহ বিভাগ, বাংলাদেশ।</span>
               </div>
 
               {/* Support Phone / Helpline */}
@@ -187,7 +181,8 @@ export default function Footer() {
                   নিরাপদ ডিজিটাল পেমেন্ট মাধ্যমসমূহ
                 </h4>
                 <p className="text-xs text-muted-foreground">
-                  বিকাশ, নগদ, রকেট, ভিসা, মাস্টারকার্ড ও প্রধান ব্যাংকিং কার্ডের মাধ্যমে ইনস্ট্যান্ট বিল পরিশোধ
+                  বিকাশ, নগদ, রকেট, ভিসা, মাস্টারকার্ড ও প্রধান ব্যাংকিং কার্ডের
+                  মাধ্যমে ইনস্ট্যান্ট বিল পরিশোধ
                 </p>
               </div>
             </div>
@@ -219,10 +214,14 @@ export default function Footer() {
               <Suspense fallback={null}>
                 <CurrentYear />
               </Suspense>{" "}
-              <span className="font-semibold text-foreground">ফাস্ট কমিউনিকেশন</span> (Fast Communication)। সর্বস্বত্ব সংরক্ষিত।
+              <span className="font-semibold text-foreground">
+                ফাস্ট কমিউনিকেশন
+              </span>{" "}
+              (Fast Communication)। সর্বস্বত্ব সংরক্ষিত।
             </p>
             <p className="mt-0.5 text-[11px] text-muted-foreground/80">
-              TIN: 880092407015 • ট্রেড লাইসেন্স নং: 0569-00 • আইডি: 02-005-0569-00
+              TIN: 880092407015 • ট্রেড লাইসেন্স নং: 0569-00 • আইডি:
+              02-005-0569-00
             </p>
           </div>
 
