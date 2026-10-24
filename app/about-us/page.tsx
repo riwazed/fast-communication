@@ -184,7 +184,7 @@ export default function AboutUsPage() {
             </div>
 
             <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl leading-tight">
-              আমাদের লক্ষ্য — শেরপুরের প্রতিটি ঘরে{" "}
+              আমাদের লক্ষ্য, শেরপুরের প্রতিটি ঘরে{" "}
               <span className="bg-gradient-to-r from-primary via-blue-600 to-brand-orange bg-clip-text text-transparent">
                 উচ্চগতির ডিজিটাল সংযোগ
               </span>{" "}
