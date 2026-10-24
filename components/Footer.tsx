@@ -105,7 +105,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <span className="size-1.5 rounded-full bg-brand-orange shrink-0" />
-                <span>১০০+ Mbps লোকাল BDIX ও FTP সার্ভার</span>
+                <span>২০০+ Mbps লোকাল BDIX ও FTP সার্ভার</span>
               </li>
               <li className="flex items-center gap-2">
                 <span className="size-1.5 rounded-full bg-emerald-500 shrink-0" />

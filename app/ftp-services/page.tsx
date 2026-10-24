@@ -25,7 +25,7 @@ import { Badge } from "@/components/ui/badge";
 export const metadata: Metadata = {
   title: "FTP মুভি সার্ভার ও লাইভ টিভি | ফাস্ট কমিউনিকেশন শেরপুর",
   description:
-    "ফাস্ট কমিউনিকেশন শেরপুর ব্রডব্যান্ড নেটওয়ার্কের সেরা হাই-স্পিড FTP মুভি সার্ভার, লাইভ টিভি চ্যানেল এবং এক্সক্লুসিভ লাইভ টিভি অ্যাপস (AppoloTV ও StreamX) ডাউনলোড করুন। ১০০+ Mbps পর্যন্ত বাফারিংহীন লাইভ স্ট্রিমিং।",
+    "ফাস্ট কমিউনিকেশন শেরপুর ব্রডব্যান্ড নেটওয়ার্কের সেরা হাই-স্পিড FTP মুভি সার্ভার, লাইভ টিভি চ্যানেল এবং এক্সক্লুসিভ লাইভ টিভি অ্যাপস (AppoloTV ও StreamX) ডাউনলোড করুন। ২০০+ Mbps পর্যন্ত বাফারিংহীন লাইভ স্ট্রিমিং।",
   keywords: [
     "Fast Communication FTP",
     "FTP Servers Sherpur",
@@ -51,10 +51,7 @@ export default function FtpServicesPage() {
             aria-label="ব্রেডক্রাম্ব"
             className="flex items-center gap-2 text-xs text-muted-foreground"
           >
-            <Link
-              href="/"
-              className="transition-colors hover:text-foreground"
-            >
+            <Link href="/" className="transition-colors hover:text-foreground">
               হোম
             </Link>
             <ChevronRight className="size-3.5" />
@@ -69,7 +66,7 @@ export default function FtpServicesPage() {
           <header className="mt-8 text-center max-w-4xl mx-auto flex flex-col items-center gap-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary backdrop-blur-sm">
               <Zap className="size-3.5 text-brand-orange" />
-              <span>১০০+ Mbps আনলিমিটেড BDIX ও লোকাল ক্যাশ</span>
+              <span>২০০+ Mbps আনলিমিটেড BDIX ও লোকাল ক্যাশ</span>
             </div>
 
             <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl leading-tight">
@@ -81,18 +78,24 @@ export default function FtpServicesPage() {
             </h1>
 
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              ফাস্ট কমিউনিকেশনের অপটিক্যাল ফাইবার নেটওয়ার্কে কোনো বাফারিং ছাড়াই উপভোগ করুন
-              সর্বাধিক জনপ্রিয় ১২+ মুভি সার্ভার, ৬+ লাইভ টিভি পোর্টাল এবং সরাসরি ডাউনলোড
-              করুন আমাদের অফিসিয়াল লাইভ টিভি অ্যাপস।
+              ফাস্ট কমিউনিকেশনের অপটিক্যাল ফাইবার নেটওয়ার্কে কোনো বাফারিং ছাড়াই
+              উপভোগ করুন সর্বাধিক জনপ্রিয় ১২+ মুভি সার্ভার, ৬+ লাইভ টিভি পোর্টাল
+              এবং সরাসরি ডাউনলোড করুন আমাদের অফিসিয়াল লাইভ টিভি অ্যাপস।
             </p>
 
             {/* Network Requirement Notice Box */}
             <div className="mt-2 inline-flex items-start sm:items-center gap-3 rounded-2xl border border-border/80 bg-card/80 dark:bg-card/40 p-4 text-xs sm:text-sm text-muted-foreground max-w-2xl text-left backdrop-blur-md">
               <ShieldAlert className="size-5 shrink-0 text-brand-orange mt-0.5 sm:mt-0" />
               <span>
-                <strong className="text-foreground font-semibold">জরুরি নোটিশ:</strong> এই সার্ভার ও লাইভ টিভি লিংকগুলো শুধুমাত্র{" "}
-                <strong className="text-foreground font-semibold">ফাস্ট কমিউনিকেশন ব্রডব্যান্ড লাইনে</strong> সংযুক্ত থাকলে কাজ করবে।
-                মোবাইল ইন্টারনেট বা VPN কানেক্টেড থাকলে কাজ করবে না।
+                <strong className="text-foreground font-semibold">
+                  জরুরি নোটিশ:
+                </strong>{" "}
+                এই সার্ভার ও লাইভ টিভি লিংকগুলো শুধুমাত্র{" "}
+                <strong className="text-foreground font-semibold">
+                  ফাস্ট কমিউনিকেশন ব্রডব্যান্ড লাইনে
+                </strong>{" "}
+                সংযুক্ত থাকলে কাজ করবে। মোবাইল ইন্টারনেট বা VPN কানেক্টেড থাকলে
+                কাজ করবে না।
               </span>
             </div>
 
@@ -153,12 +156,13 @@ export default function FtpServicesPage() {
                   id="apps-heading"
                   className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
                 >
-                  স্মার্টফোন ও অ্যান্ড্রয়েড টিভির জন্য অফিসিয়াল লাইভ টিভি অ্যাপস
+                  স্মার্টফোন ও অ্যান্ড্রয়েড টিভির জন্য অফিসিয়াল লাইভ টিভি
+                  অ্যাপস
                 </h2>
                 <p className="max-w-2xl text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  ফাস্ট কমিউনিকেশনের হাই-স্পিড BDIX নেটওয়ার্কে সকল দেশি-বিদেশি লাইভ টিভি
-                  চ্যানেল ও স্পোর্টস সম্প্রচার বাফারিং ছাড়া উপভোগ করতে আমাদের অফিসিয়াল লাইভ
-                  টিভি অ্যাপ দুটি ফ্রিতে ডাউনলোড করুন।
+                  ফাস্ট কমিউনিকেশনের হাই-স্পিড BDIX নেটওয়ার্কে সকল দেশি-বিদেশি
+                  লাইভ টিভি চ্যানেল ও স্পোর্টস সম্প্রচার বাফারিং ছাড়া উপভোগ করতে
+                  আমাদের অফিসিয়াল লাইভ টিভি অ্যাপ দুটি ফ্রিতে ডাউনলোড করুন।
                 </p>
               </div>
 
@@ -198,16 +202,17 @@ export default function FtpServicesPage() {
                     </div>
 
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      সরাসরি ১০০+ দেশি ও আন্তর্জাতিক লাইভ টিভি চ্যানেল, স্পোর্টস ও ব্রেকিং
-                      নিউজ ফুল এইচডিতে দেখার জন্য জনপ্রিয় লাইভ টিভি অ্যাপ। অ্যান্ড্রয়েড স্মার্ট
-                      টিভি রিমোট ও মোবাইল টাচস্ক্রিনের সাথে শতভাগ সামঞ্জস্যপূর্ণ।
+                      সরাসরি ২০০+ দেশি ও আন্তর্জাতিক লাইভ টিভি চ্যানেল, স্পোর্টস
+                      ও ব্রেকিং নিউজ ফুল এইচডিতে দেখার জন্য জনপ্রিয় লাইভ টিভি
+                      অ্যাপ। অ্যান্ড্রয়েড স্মার্ট টিভি রিমোট ও মোবাইল
+                      টাচস্ক্রিনের সাথে শতভাগ সামঞ্জস্যপূর্ণ।
                     </p>
 
                     {/* Highlights */}
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-foreground/90">
                       <li className="flex items-center gap-2">
                         <Check className="size-3.5 text-primary shrink-0" />
-                        <span>১০০+ লাইভ স্যাটেলাইট চ্যানেল</span>
+                        <span>২০০+ লাইভ স্যাটেলাইট চ্যানেল</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="size-3.5 text-primary shrink-0" />
@@ -276,9 +281,10 @@ export default function FtpServicesPage() {
                     </div>
 
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      উচ্চমানের লাইভ টিভি চ্যানেল সম্প্রচার ও বিনোদনমূলক চ্যানেল দেখার জন্য
-                      আরেকটি প্রিমিয়াম লাইভ টিভি অ্যাপ্লিকেশন। নিরবচ্ছিন্ন লাইভ ব্রডকাস্ট,
-                      এইচডি ক্লিয়ারিটি এবং একাধিক চ্যানেল ক্যাটাগরি সহজে উপভোগের সুবিধা।
+                      উচ্চমানের লাইভ টিভি চ্যানেল সম্প্রচার ও বিনোদনমূলক চ্যানেল
+                      দেখার জন্য আরেকটি প্রিমিয়াম লাইভ টিভি অ্যাপ্লিকেশন।
+                      নিরবচ্ছিন্ন লাইভ ব্রডকাস্ট, এইচডি ক্লিয়ারিটি এবং একাধিক
+                      চ্যানেল ক্যাটাগরি সহজে উপভোগের সুবিধা।
                     </p>
 
                     {/* Highlights */}
@@ -333,7 +339,10 @@ export default function FtpServicesPage() {
                         কীভাবে অ্যান্ড্রয়েড ডিভাইসে ইনস্টল করবেন?
                       </h4>
                       <p className="text-xs text-muted-foreground mt-0.5">
-                        ১. উপরের বাটনে ক্লিক করে APK ডাউনলোড করুন → ২. ডিভাইসের Settings &gt; Security-তে গিয়ে &quot;Install from Unknown Sources&quot; অন করুন → ৩. ইনস্টল সম্পন্ন হলে সরাসরি উপভোগ করুন।
+                        ১. উপরের বাটনে ক্লিক করে APK ডাউনলোড করুন → ২. ডিভাইসের
+                        Settings &gt; Security-তে গিয়ে &quot;Install from
+                        Unknown Sources&quot; অন করুন → ৩. ইনস্টল সম্পন্ন হলে
+                        সরাসরি উপভোগ করুন।
                       </p>
                     </div>
                   </div>
@@ -389,9 +398,10 @@ export default function FtpServicesPage() {
                   <span>সার্ভার কেন ওপেন হচ্ছে না?</span>
                 </div>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  এই সার্ভারগুলো কেবল ফাস্ট কমিউনিকেশন ব্রডব্যান্ড লাইনে অ্যাক্সেস করা সম্ভব।
-                  মোবাইল ডাটা (যেমন গ্রামীণফোন, রবি, বাংলালিংক) বা ডিভাইসে কোনো VPN চালু থাকলে
-                  সার্ভারগুলো লোড হবে না। VPN বন্ধ করে পুনরায় চেষ্টা করুন।
+                  এই সার্ভারগুলো কেবল ফাস্ট কমিউনিকেশন ব্রডব্যান্ড লাইনে
+                  অ্যাক্সেস করা সম্ভব। মোবাইল ডাটা (যেমন গ্রামীণফোন, রবি,
+                  বাংলালিংক) বা ডিভাইসে কোনো VPN চালু থাকলে সার্ভারগুলো লোড হবে
+                  না। VPN বন্ধ করে পুনরায় চেষ্টা করুন।
                 </p>
               </div>
 
@@ -401,8 +411,9 @@ export default function FtpServicesPage() {
                   <span>অ্যান্ড্রয়েড টিভিতে অ্যাপ সেটআপ</span>
                 </div>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  পেনড্রাইভে APK ফাইলটি কপি করে আপনার স্মার্ট টিভিতে সংযুক্ত করুন এবং ফাইল ম্যানেজার
-                  দিয়ে ইনস্টল করুন। অথবা টিভির নিজস্ব ব্রাউজার থেকে সরাসরি এই পেজে ঢুকে ডাউনলোড করুন।
+                  পেনড্রাইভে APK ফাইলটি কপি করে আপনার স্মার্ট টিভিতে সংযুক্ত
+                  করুন এবং ফাইল ম্যানেজার দিয়ে ইনস্টল করুন। অথবা টিভির নিজস্ব
+                  ব্রাউজার থেকে সরাসরি এই পেজে ঢুকে ডাউনলোড করুন।
                 </p>
               </div>
 
@@ -412,8 +423,9 @@ export default function FtpServicesPage() {
                   <span>FTP ডাউনলোডের সেরা গতি পেতে</span>
                 </div>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  কম্পিউটার ব্যবহারকারীরা দ্রুত ফাইল ডাউনলোডের জন্য IDM (Internet Download Manager)
-                  বা ফ্রি ডাউনলোড ম্যানেজার ব্যবহার করতে পারেন। কোনো বাধা ছাড়াই ১০০+ Mbps স্পিড পাবেন।
+                  কম্পিউটার ব্যবহারকারীরা দ্রুত ফাইল ডাউনলোডের জন্য IDM
+                  (Internet Download Manager) বা ফ্রি ডাউনলোড ম্যানেজার ব্যবহার
+                  করতে পারেন। কোনো বাধা ছাড়াই ২০০+ Mbps স্পিড পাবেন।
                 </p>
               </div>
             </div>
@@ -423,7 +435,8 @@ export default function FtpServicesPage() {
               <div className="flex items-center gap-3">
                 <AlertCircle className="size-5 text-primary shrink-0" />
                 <p className="text-xs text-foreground/90">
-                  সার্ভার সংক্রান্ত যেকোনো সমস্যায় আমাদের ২৪/৭ সাপোর্ট টিমের সাথে যোগাযোগ করুন।
+                  সার্ভার সংক্রান্ত যেকোনো সমস্যায় আমাদের ২৪/৭ সাপোর্ট টিমের
+                  সাথে যোগাযোগ করুন।
                 </p>
               </div>
 

@@ -103,7 +103,7 @@ export const LIVE_TV_SERVERS = [
     name: "Live TV Server 1",
     address: "http://10.99.99.99",
     description: "প্রাথমিক লাইভ টিভি সার্ভার",
-    channels: "১০০+ চ্যানেল",
+    channels: "২০০+ চ্যানেল",
   },
   {
     id: 2,

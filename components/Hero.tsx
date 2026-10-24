@@ -191,7 +191,7 @@ export default function Hero() {
                   </div>
                   <div className="mt-1.5 flex items-baseline gap-1">
                     <span className="text-2xl font-extrabold text-foreground tracking-tight">
-                      ১০০+
+                      ২০০+
                     </span>
                     <span className="text-xs font-semibold text-muted-foreground">
                       Mbps
