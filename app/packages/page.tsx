@@ -85,7 +85,7 @@ export default function PackagesPage() {
       {/* =============================================================
           1. Hero Header & Context Section
           ============================================================= */}
-      <section className="relative py-10 sm:py-14 lg:py-20 border-b border-border/50 b">
+      <section className="relative py-10 sm:py-14 lg:py-20 border-b border-border/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb Navigation */}
           <nav
@@ -217,9 +217,9 @@ export default function PackagesPage() {
             </p>
           </div>
 
-          {/* Table Container */}
-          <div className="overflow-x-auto rounded-2xl border border-border/70 bg-card/90 shadow-md backdrop-blur-xl">
-            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+          {/* 1. Desktop & Tablet Comparative Table (md and up) */}
+          <div className="hidden md:block overflow-x-auto rounded-2xl border border-border/70 bg-card/90 shadow-md backdrop-blur-xl">
+            <table className="w-full min-w-[650px] text-left border-collapse text-xs sm:text-sm">
               <thead>
                 <tr className="border-b border-border/80 bg-muted/50 text-foreground font-bold">
                   <th scope="col" className="py-3.5 px-4 sm:px-5">
@@ -234,14 +234,17 @@ export default function PackagesPage() {
                   <th scope="col" className="py-3.5 px-3 sm:px-4 text-center">
                     BDIX / FTP
                   </th>
-                  <th scope="col" className="py-3.5 px-3 sm:px-4 text-right">
-                    মাসিক মূল্য
-                  </th>
                   <th scope="col" className="py-3.5 px-3 sm:px-4 text-center">
                     উপযুক্ত ডিভাইস
                   </th>
                   <th scope="col" className="py-3.5 px-3 sm:px-4 text-center">
                     রিয়েল আইপি
+                  </th>
+                  <th
+                    scope="col"
+                    className="py-3.5 px-4 sm:px-5 text-right font-bold text-foreground"
+                  >
+                    মাসিক রেট
                   </th>
                 </tr>
               </thead>
@@ -277,9 +280,6 @@ export default function PackagesPage() {
                       <td className="py-3.5 px-3 sm:px-4 text-center text-xs text-foreground/80">
                         {pkg.bdixSpeed}
                       </td>
-                      <td className="py-3.5 px-3 sm:px-4 text-right font-extrabold text-foreground">
-                        ৳{pkg.price}
-                      </td>
                       <td className="py-3.5 px-3 sm:px-4 text-center text-xs text-muted-foreground">
                         {pkg.devices}
                       </td>
@@ -295,11 +295,108 @@ export default function PackagesPage() {
                           </span>
                         )}
                       </td>
+                      <td className="py-3.5 px-4 sm:px-5 text-right font-extrabold text-foreground text-sm sm:text-base">
+                        ৳{pkg.price}{" "}
+                        <span className="text-xs font-normal text-muted-foreground">
+                          /মাস
+                        </span>
+                      </td>
                     </tr>
                   );
                 })}
               </tbody>
             </table>
+          </div>
+
+          {/* 2. Mobile Comparative Cards View (Under md / Phones) */}
+          <div className="block md:hidden space-y-3">
+            {ALL_PACKAGES.map((pkg) => (
+              <div
+                key={pkg.id}
+                className={cn(
+                  "rounded-2xl border p-4 backdrop-blur-xl transition-all",
+                  pkg.isPopular
+                    ? "border-primary/80 bg-card/95 shadow-md shadow-primary/10 ring-1 ring-primary/25"
+                    : "border-border/75 bg-card/85 shadow-xs",
+                )}
+              >
+                {/* Mobile Card Header */}
+                <div className="flex items-start justify-between gap-2 border-b border-border/40 pb-2.5">
+                  <div>
+                    <div className="flex items-center gap-1.5">
+                      <h4 className="font-bold text-sm sm:text-base text-foreground">
+                        {pkg.name}
+                      </h4>
+                      {pkg.isPopular && (
+                        <span className="rounded-full bg-primary text-primary-foreground text-[10px] font-bold px-2 py-0.5">
+                          পপুলার
+                        </span>
+                      )}
+                    </div>
+                    <span className="text-[11px] font-medium text-primary">
+                      {pkg.categoryLabel}
+                    </span>
+                  </div>
+
+                  {/* Price */}
+                  <div className="text-right">
+                    <span className="text-lg font-extrabold text-foreground">
+                      ৳{pkg.price}
+                    </span>
+                    <span className="text-[11px] text-muted-foreground block -mt-1">
+                      /মাস
+                    </span>
+                  </div>
+                </div>
+
+                {/* 2x2 Stats Grid for Mobile */}
+                <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
+                  <div className="rounded-xl bg-muted/40 p-2.5 border border-border/40">
+                    <span className="text-[10px] text-muted-foreground block">
+                      ইন্টারনেট স্পিড
+                    </span>
+                    <div className="font-bold text-primary mt-0.5">
+                      <span className="text-sm">{pkg.speed}</span>{" "}
+                      {pkg.speedUnit}
+                    </div>
+                  </div>
+
+                  <div className="rounded-xl bg-muted/40 p-2.5 border border-border/40">
+                    <span className="text-[10px] text-muted-foreground block">
+                      BDIX ও FTP ক্যাশ
+                    </span>
+                    <span className="font-semibold text-foreground mt-0.5 block">
+                      {pkg.bdixSpeed}
+                    </span>
+                  </div>
+
+                  <div className="rounded-xl bg-muted/40 p-2.5 border border-border/40">
+                    <span className="text-[10px] text-muted-foreground block">
+                      উপযুক্ত ডিভাইস
+                    </span>
+                    <span className="font-medium text-foreground mt-0.5 block">
+                      {pkg.devices}
+                    </span>
+                  </div>
+
+                  <div className="rounded-xl bg-muted/40 p-2.5 border border-border/40">
+                    <span className="text-[10px] text-muted-foreground block">
+                      রিয়েল আইপি
+                    </span>
+                    <span
+                      className={cn(
+                        "mt-0.5 block font-medium",
+                        pkg.hasRealIp
+                          ? "text-emerald-600 dark:text-emerald-400 font-semibold"
+                          : "text-muted-foreground",
+                      )}
+                    >
+                      {pkg.hasRealIp ? "অন্তর্ভুক্ত" : "ঐচ্ছিক"}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

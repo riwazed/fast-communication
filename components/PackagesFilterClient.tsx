@@ -58,12 +58,12 @@ export default function PackagesFilterClient() {
       {/* =============================================================
           Controls: Filter Tabs & Sorting
           ============================================================= */}
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-4 rounded-2xl border border-border/70 bg-card/70 p-3 sm:p-4 backdrop-blur-xl shadow-xs">
-        {/* Category Pills */}
+      <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3 sm:gap-4 rounded-2xl border border-border/70 bg-card/70 p-3 sm:p-4 backdrop-blur-xl shadow-xs">
+        {/* Category Pills: 2-col on mobile, flex wrap on tablet/desktop */}
         <div
           role="tablist"
           aria-label="প্যাকেজ ক্যাটাগরি"
-          className="flex flex-wrap items-center justify-center sm:justify-start gap-1.5 sm:gap-2 w-full lg:w-auto"
+          className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-1.5 sm:gap-2 w-full lg:w-auto"
         >
           {PACKAGE_CATEGORIES.map((cat) => {
             const Icon = CATEGORY_ICONS[cat.id];
@@ -76,17 +76,17 @@ export default function PackagesFilterClient() {
                 aria-selected={isSelected}
                 onClick={() => setSelectedCategory(cat.id)}
                 className={cn(
-                  "relative inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer",
+                  "relative inline-flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2 rounded-xl px-2.5 sm:px-3.5 py-2 text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer text-center",
                   isSelected
                     ? "bg-primary text-primary-foreground shadow-sm shadow-primary/25"
                     : "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground",
                 )}
               >
                 <Icon className="size-3.5 shrink-0" />
-                <span>{cat.label}</span>
+                <span className="truncate">{cat.label}</span>
                 <span
                   className={cn(
-                    "ml-1 inline-flex size-5 items-center justify-center rounded-full text-[11px] font-bold",
+                    "inline-flex size-4.5 sm:size-5 items-center justify-center rounded-full text-[10px] sm:text-[11px] font-bold shrink-0",
                     isSelected
                       ? "bg-primary-foreground/20 text-primary-foreground"
                       : "bg-background text-muted-foreground border border-border/60",
@@ -99,8 +99,8 @@ export default function PackagesFilterClient() {
           })}
         </div>
 
-        {/* Sorting Dropdown */}
-        <div className="flex items-center gap-2 w-full lg:w-auto justify-end text-xs sm:text-sm">
+        {/* Sorting Dropdown: Full width on mobile, inline on desktop */}
+        <div className="flex items-center justify-between sm:justify-end gap-2 w-full lg:w-auto pt-2 lg:pt-0 border-t border-border/40 lg:border-t-0 text-xs sm:text-sm">
           <span className="text-muted-foreground font-medium flex items-center gap-1.5 shrink-0">
             <Filter className="size-3.5 text-primary" />
             <span>সাজান:</span>
@@ -113,7 +113,7 @@ export default function PackagesFilterClient() {
                 e.target.value as "default" | "price-asc" | "speed-desc",
               )
             }
-            className="rounded-xl border border-border/80 bg-background px-3 py-1.5 text-xs sm:text-sm font-medium text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all cursor-pointer"
+            className="flex-1 sm:flex-initial rounded-xl border border-border/80 bg-background px-3 py-2 text-xs sm:text-sm font-medium text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all cursor-pointer"
           >
             <option value="default">প্রস্তাবিত ক্রম (Default)</option>
             <option value="price-asc">কম মূল্য থেকে বেশি (৳)</option>
@@ -123,16 +123,16 @@ export default function PackagesFilterClient() {
       </div>
 
       {/* Office Connection Callout Banner */}
-      <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-3.5 backdrop-blur-sm">
-        <div className="flex items-center gap-3 text-center sm:text-left">
-          <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+      <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 backdrop-blur-sm">
+        <div className="flex items-start gap-3 text-left">
+          <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary mt-0.5">
             <PhoneCall className="size-4.5" />
           </div>
           <div>
-            <p className="text-xs sm:text-sm font-semibold text-foreground">
+            <p className="text-xs sm:text-sm font-semibold text-foreground leading-snug">
               প্যাকেজ রেট নির্ধারিত • নতুন সংযোগ পেতে সরাসরি অফিসে কল করুন
             </p>
-            <p className="text-xs text-muted-foreground mt-0.5">
+            <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
               যেকোনো প্যাকেজের সংযোগ নিতে আমাদের শেরপুর সদরের অফিসে যোগাযোগ বা
               ফোন করুন।
             </p>
@@ -140,7 +140,7 @@ export default function PackagesFilterClient() {
         </div>
         <Link
           href="/contact-us"
-          className="shrink-0 inline-flex items-center gap-1.5 rounded-xl border border-primary/30 bg-background/80 px-4 py-2 text-xs font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200"
+          className="w-full sm:w-auto justify-center shrink-0 inline-flex items-center gap-1.5 rounded-xl border border-primary/30 bg-background/80 px-4 py-2 text-xs font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200"
         >
           <span>অফিসের তথ্য দেখুন</span>
           <ArrowRight className="size-3.5" />
