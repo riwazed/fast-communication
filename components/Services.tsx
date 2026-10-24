@@ -166,10 +166,10 @@ export default function Services() {
 
           <h2
             id="services-heading"
-            className="mt-4 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-[2.65rem] leading-[1.25] sm:leading-[1.2]"
+            className="mt-4 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-[2.65rem] leading-tight sm:leading-[1.2]"
           >
             শেরপুর জেলার গ্রাহকদের জন্য{" "}
-            <span className="bg-gradient-to-r from-primary via-blue-600 to-brand-orange bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary via-blue-600 to-brand-orange bg-clip-text text-transparent">
               আধুনিক ও নির্ভরযোগ্য
             </span>{" "}
             ইন্টারনেট সেবা
@@ -197,7 +197,7 @@ export default function Services() {
                 {/* Subtle top gradient accent on hover */}
                 <div
                   aria-hidden="true"
-                  className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-blue-500 to-brand-orange opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  className="absolute inset-x-0 top-0 h-1 bg-linear-to-r from-primary via-blue-500 to-brand-orange opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 />
 
                 <div>
@@ -277,7 +277,7 @@ export default function Services() {
         {/* =============================================================
             Educational Guidance Callout Strip (Help choosing the right service)
             ============================================================= */}
-        <div className="mt-12 sm:mt-16 rounded-2xl border border-primary/20 bg-gradient-to-r from-primary/10 via-card/90 to-brand-orange/10 p-6 sm:p-8 backdrop-blur-xl shadow-md">
+        <div className="mt-12 sm:mt-16 rounded-2xl border border-primary/20 bg-linear-to-r from-primary/10 via-card/90 to-brand-orange/10 p-6 sm:p-8 backdrop-blur-xl shadow-md">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <div className="flex size-13 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-md shadow-primary/25">

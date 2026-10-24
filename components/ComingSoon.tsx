@@ -41,7 +41,7 @@ export default function ComingSoon({
       {/* Ambient background glow orbs */}
       <div
         aria-hidden="true"
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 sm:w-[500px] sm:h-[500px] rounded-full bg-primary/10 blur-[120px] pointer-events-none -z-10"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 sm:w-125 sm:h-125 rounded-full bg-primary/10 blur-[120px] pointer-events-none -z-10"
       />
       <div
         aria-hidden="true"
@@ -65,7 +65,7 @@ export default function ComingSoon({
         </nav>
 
         {/* Main Glassmorphic Card */}
-        <div className="max-w-3xl mx-auto rounded-3xl border border-primary/25 bg-gradient-to-b from-card/95 via-card/85 to-card/90 p-6 sm:p-10 md:p-14 shadow-2xl backdrop-blur-2xl text-center relative">
+        <div className="max-w-3xl mx-auto rounded-3xl border border-primary/25 bg-linear-to-b from-card/95 via-card/85 to-card/90 p-6 sm:p-10 md:p-14 shadow-2xl backdrop-blur-2xl text-center relative">
           {/* Eyebrow Status Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs sm:text-sm font-semibold text-primary backdrop-blur-sm">
             <Clock className="size-3.5 shrink-0 text-brand-orange animate-pulse" />
@@ -73,9 +73,9 @@ export default function ComingSoon({
           </div>
 
           {/* Heading */}
-          <h1 className="mt-5 text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground leading-[1.25] sm:leading-[1.2]">
+          <h1 className="mt-5 text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground leading-tight sm:leading-[1.2]">
             {title}{" "}
-            <span className="bg-gradient-to-r from-primary via-blue-600 to-brand-orange bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary via-blue-600 to-brand-orange bg-clip-text text-transparent">
               {highlightedTitleWord}
             </span>
           </h1>

@@ -102,21 +102,21 @@ export default function SiteBackground() {
       {/* Orb 1: Primary Royal/Electric Blue (Upper Left to Center) */}
       <div
         className="animate-bg-drift-1 absolute -top-24 left-[5%] md:left-[12%] h-[340px] w-[340px] sm:h-[480px] sm:w-[480px] lg:h-[640px] lg:w-[640px] rounded-full blur-[80px] sm:blur-[110px] lg:blur-[140px]
-          bg-gradient-to-br from-blue-400/22 via-primary/14 to-transparent
+          bg-linear-to-br from-blue-400/22 via-primary/14 to-transparent
           dark:from-blue-600/18 dark:via-primary/14 dark:to-transparent"
       />
 
       {/* Orb 2: Brand Orange Accent (Upper Right) - Fast Comm Energy */}
       <div
         className="animate-bg-drift-2 absolute -top-20 right-[3%] md:right-[10%] h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] lg:h-[520px] lg:w-[520px] rounded-full blur-[80px] sm:blur-[120px] lg:blur-[150px]
-          bg-gradient-to-bl from-amber-400/18 via-orange-400/12 to-transparent
+          bg-linear-to-bl from-amber-400/18 via-orange-400/12 to-transparent
           dark:from-orange-500/13 dark:via-amber-500/7 dark:to-transparent"
       />
 
       {/* Orb 3: Atmospheric Grounding (Mid Page Depth) */}
       <div
         className="animate-bg-pulse-soft absolute top-[40%] left-[25%] md:left-[35%] h-[260px] w-[260px] sm:h-[360px] sm:w-[460px] lg:h-[460px] lg:w-[680px] -translate-x-1/2 rounded-full blur-[90px] sm:blur-[130px] lg:blur-[160px]
-          bg-gradient-to-tr from-sky-300/15 via-blue-200/10 to-transparent
+          bg-linear-to-tr from-sky-300/15 via-blue-200/10 to-transparent
           dark:from-indigo-600/12 dark:via-blue-900/14 dark:to-transparent"
       />
 

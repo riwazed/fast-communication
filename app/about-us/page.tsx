@@ -185,7 +185,7 @@ export default function AboutUsPage() {
 
             <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl leading-tight">
               আমাদের লক্ষ্য, শেরপুরের প্রতিটি ঘরে{" "}
-              <span className="bg-gradient-to-r from-primary via-blue-600 to-brand-orange bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-primary via-blue-600 to-brand-orange bg-clip-text text-transparent">
                 উচ্চগতির ডিজিটাল সংযোগ
               </span>{" "}
               পৌঁছে দেওয়া
@@ -443,7 +443,7 @@ export default function AboutUsPage() {
         <section
           id="legal-credentials"
           aria-labelledby="legal-heading"
-          className="relative overflow-hidden rounded-3xl border border-emerald-500/30 bg-gradient-to-b from-card/90 via-card/75 to-card/90 p-7 sm:p-10 lg:p-12 shadow-xl backdrop-blur-2xl"
+          className="relative overflow-hidden rounded-3xl border border-emerald-500/30 bg-linear-to-b from-card/90 via-card/75 to-card/90 p-7 sm:p-10 lg:p-12 shadow-xl backdrop-blur-2xl"
         >
           {/* Ambient Glows */}
           <div
@@ -573,7 +573,7 @@ export default function AboutUsPage() {
         {/* =========================================================================
             SECTION 6: CTA CALLOUT / GET CONNECTED
             ========================================================================= */}
-        <section className="relative overflow-hidden rounded-3xl border border-primary/25 bg-gradient-to-b from-card/95 via-card/85 to-card/90 p-8 sm:p-12 text-center shadow-xl backdrop-blur-xl">
+        <section className="relative overflow-hidden rounded-3xl border border-primary/25 bg-linear-to-b from-card/95 via-card/85 to-card/90 p-8 sm:p-12 text-center shadow-xl backdrop-blur-xl">
           <div className="max-w-2xl mx-auto flex flex-col items-center gap-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1 text-xs font-semibold text-primary">
               <Zap className="size-3.5 text-brand-orange" />

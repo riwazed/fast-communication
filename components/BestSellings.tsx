@@ -133,10 +133,10 @@ export default function BestSellings() {
 
           <h2
             id="best-sellings-heading"
-            className="mt-4 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-[2.65rem] leading-[1.25] sm:leading-[1.2]"
+            className="mt-4 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-[2.65rem] leading-tight sm:leading-[1.2]"
           >
             শেরপুরে সর্বাধিক পছন্দের{" "}
-            <span className="bg-gradient-to-r from-primary via-blue-600 to-brand-orange bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary via-blue-600 to-brand-orange bg-clip-text text-transparent">
               টপ সেলিং ফাইবার
             </span>{" "}
             প্যাকেজ
@@ -169,7 +169,7 @@ export default function BestSellings() {
                 {/* Popular Badge on Top */}
                 {isPopular && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-primary via-blue-600 to-brand-orange px-4 py-1 text-xs font-bold text-white shadow-md">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-linear-to-r from-primary via-blue-600 to-brand-orange px-4 py-1 text-xs font-bold text-white shadow-md">
                       <Sparkles className="size-3 text-amber-300" />
                       <span>{pkg.badge}</span>
                     </span>

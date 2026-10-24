@@ -36,10 +36,10 @@ export default function Hero() {
             {/* Main Headline (single <h1> per page for SEO) */}
             <h1
               id="hero-heading"
-              className="mt-4 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.65rem] leading-[1.25] sm:leading-[1.2] lg:leading-[1.18]"
+              className="mt-4 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.65rem] leading-tight sm:leading-[1.2] lg:leading-[1.18]"
             >
               শেরপুর জুড়ে{" "}
-              <span className="bg-gradient-to-r from-primary via-blue-600 to-brand-orange bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-primary via-blue-600 to-brand-orange bg-clip-text text-transparent">
                 দ্রুত ও নিরবচ্ছিন্ন
               </span>{" "}
               ফাইবার ব্রডব্যান্ড
@@ -132,7 +132,7 @@ export default function Hero() {
             {/* Ambient decorative glow behind the card */}
             <div
               aria-hidden="true"
-              className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-primary/30 via-brand-orange/20 to-primary/10 blur-xl opacity-60 dark:opacity-40 -z-10"
+              className="absolute -inset-1 rounded-3xl bg-linear-to-tr from-primary/30 via-brand-orange/20 to-primary/10 blur-xl opacity-60 dark:opacity-40 -z-10"
             />
 
             {/* Glassmorphic Live Network Card */}

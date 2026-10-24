@@ -71,7 +71,7 @@ export default function FtpServicesPage() {
 
             <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl leading-tight">
               হাই-স্পিড{" "}
-              <span className="bg-gradient-to-r from-primary via-blue-600 to-brand-orange bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-primary via-blue-600 to-brand-orange bg-clip-text text-transparent">
                 FTP মুভি সার্ভার
               </span>
               , লাইভ টিভি ও স্ট্রিমিং অ্যাপস

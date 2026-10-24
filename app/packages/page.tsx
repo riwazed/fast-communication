@@ -115,9 +115,9 @@ export default function PackagesPage() {
             </div>
 
             {/* Main Title */}
-            <h1 className="mt-4 text-2xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-[2.85rem] leading-[1.25] sm:leading-[1.2]">
+            <h1 className="mt-4 text-2xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-[2.85rem] leading-tight sm:leading-[1.2]">
               আপনার প্রয়োজন অনুযায়ী সেরা{" "}
-              <span className="bg-gradient-to-r from-primary via-blue-600 to-brand-orange bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-primary via-blue-600 to-brand-orange bg-clip-text text-transparent">
                 ফাইবার ইন্টারনেট
               </span>{" "}
               প্যাকেজ
@@ -219,7 +219,7 @@ export default function PackagesPage() {
 
           {/* 1. Desktop & Tablet Comparative Table (md and up) */}
           <div className="hidden md:block overflow-x-auto rounded-2xl border border-border/70 bg-card/90 shadow-md backdrop-blur-xl">
-            <table className="w-full min-w-[650px] text-left border-collapse text-xs sm:text-sm">
+            <table className="w-full min-w-162.5 text-left border-collapse text-xs sm:text-sm">
               <thead>
                 <tr className="border-b border-border/80 bg-muted/50 text-foreground font-bold">
                   <th scope="col" className="py-3.5 px-4 sm:px-5">
@@ -444,7 +444,7 @@ export default function PackagesPage() {
           </div>
 
           {/* Quick links to Exclusive APKs & FTP */}
-          <div className="mt-10 rounded-2xl border border-primary/20 bg-gradient-to-r from-primary/10 via-card to-brand-orange/10 p-6 sm:p-8 backdrop-blur-xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="mt-10 rounded-2xl border border-primary/20 bg-linear-to-r from-primary/10 via-card to-brand-orange/10 p-6 sm:p-8 backdrop-blur-xl flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
               <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-md shadow-primary/20">
                 <Tv className="size-6" />
@@ -526,7 +526,7 @@ export default function PackagesPage() {
           ============================================================= */}
       <section className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl border border-primary/25 bg-gradient-to-b from-card/95 via-card/85 to-card/90 p-7 sm:p-10 md:p-12 shadow-xl backdrop-blur-2xl">
+          <div className="relative overflow-hidden rounded-3xl border border-primary/25 bg-linear-to-b from-card/95 via-card/85 to-card/90 p-7 sm:p-10 md:p-12 shadow-xl backdrop-blur-2xl">
             {/* Ambient Background Glows */}
             <div
               aria-hidden="true"

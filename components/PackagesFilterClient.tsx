@@ -167,7 +167,7 @@ export default function PackagesFilterClient() {
               {/* Popular Glow Badge on Top */}
               {isPopular && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-primary via-blue-600 to-brand-orange px-4 py-1 text-xs font-bold text-white shadow-md">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-linear-to-r from-primary via-blue-600 to-brand-orange px-4 py-1 text-xs font-bold text-white shadow-md">
                     <Sparkles className="size-3 text-amber-300" />
                     <span>{pkg.badge}</span>
                   </span>

@@ -29,7 +29,7 @@ export default function CTA() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Ambient Container Card */}
-        <div className="relative overflow-hidden rounded-3xl border border-primary/25 bg-gradient-to-b from-card/95 via-card/85 to-card/90 p-7 sm:p-10 md:p-14 lg:p-16 shadow-2xl backdrop-blur-2xl">
+        <div className="relative overflow-hidden rounded-3xl border border-primary/25 bg-linear-to-b from-card/95 via-card/85 to-card/90 p-7 sm:p-10 md:p-14 lg:p-16 shadow-2xl backdrop-blur-2xl">
           {/* Ambient Corner Glow Orbs */}
           <div
             aria-hidden="true"
@@ -57,10 +57,10 @@ export default function CTA() {
           <div className="mx-auto mt-6 max-w-3xl text-center">
             <h2
               id="cta-heading"
-              className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl leading-[1.25] sm:leading-[1.2]"
+              className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl leading-tight sm:leading-[1.2]"
             >
               দ্রুতগতির নিরবচ্ছিন্ন ফাইবার সংযোগ নিতে{" "}
-              <span className="bg-gradient-to-r from-primary via-blue-600 to-brand-orange bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-primary via-blue-600 to-brand-orange bg-clip-text text-transparent">
                 আজই যুক্ত হোন
               </span>
             </h2>
