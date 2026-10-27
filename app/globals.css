@@ -217,6 +217,7 @@
 
   html {
     @apply font-sans;
+    word-spacing: 0.12em;
   }
 
   body {
@@ -224,19 +225,22 @@
     font-family: var(--font-anek-bangla), sans-serif;
     line-height: 1.8;
     word-break: break-word;
+    word-spacing: inherit;
   }
 
-  /* Typography: Headings use heavier weight */
+  /* Typography: Headings use heavier weight with proportionate spacing */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-anek-bangla), sans-serif;
     font-weight: 700;
     line-height: 1.4;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
+    word-spacing: 0.08em;
   }
 
-  /* Buttons, labels, inputs inherit the Bangla font */
+  /* Buttons, labels, inputs inherit the Bangla font and spacing */
   button, input, select, textarea, label {
     font-family: inherit;
+    word-spacing: inherit;
   }
 }
 
