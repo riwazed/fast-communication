@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CONTACT_INFO } from "@/lib/navigation";
+import { CONTACT_INFO, LEGAL_NAV_LINKS } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -530,6 +530,25 @@ export default function AboutUsPage() {
                 <span className="mt-1 text-[11px] text-muted-foreground block">
                   শেরপুর পৌরসভা কর্তৃক ইস্যুকৃত
                 </span>
+              </div>
+            </div>
+
+            {/* Official Legal Policy Documents Strip */}
+            <div className="pt-5 border-t border-border/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <span className="text-xs font-semibold text-foreground/90">
+                প্রাতিষ্ঠানিক ও গ্রাহক সুরক্ষা নীতিমালাসমূহ:
+              </span>
+              <div className="flex flex-wrap items-center gap-2">
+                {LEGAL_NAV_LINKS.map((policy) => (
+                  <Link
+                    key={policy.id}
+                    href={policy.href}
+                    className="inline-flex items-center gap-1 rounded-xl border border-border/70 bg-card/80 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:border-primary/50 hover:text-primary"
+                  >
+                    <span>{policy.name}</span>
+                    <ArrowRight className="size-3" />
+                  </Link>
+                ))}
               </div>
             </div>
           </div>

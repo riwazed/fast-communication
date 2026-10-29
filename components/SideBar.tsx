@@ -28,6 +28,7 @@ import {
 } from "@/components/ui/sheet";
 import {
   CONTACT_INFO,
+  LEGAL_NAV_LINKS,
   MAIN_NAV_LINKS,
   PORTAL_LINK,
   type NavItem,
@@ -185,6 +186,37 @@ export default function SideBar() {
                 >
                   {CONTACT_INFO.phone}
                 </a>
+              </div>
+            </div>
+
+            {/* Legal Policies Compact Grid in Drawer */}
+            <div className="mt-4 pt-3 border-t border-border/50">
+              <p className="px-1 pb-2 text-[11px] font-semibold tracking-wider text-muted-foreground uppercase">
+                আইনি নীতিমালা
+              </p>
+              <div className="grid grid-cols-2 gap-1.5">
+                {LEGAL_NAV_LINKS.map((policy) => {
+                  const isPolicyActive = pathname === policy.href;
+                  return (
+                    <SheetClose
+                      key={policy.id}
+                      nativeButton={false}
+                      render={
+                        <Link
+                          href={policy.href}
+                          className={cn(
+                            "rounded-lg border px-2.5 py-1.5 text-center text-[11px] font-medium transition-colors",
+                            isPolicyActive
+                              ? "border-primary bg-primary/10 text-primary font-semibold"
+                              : "border-border/50 bg-muted/30 text-muted-foreground hover:bg-muted hover:text-foreground",
+                          )}
+                        />
+                      }
+                    >
+                      {policy.shortName}
+                    </SheetClose>
+                  );
+                })}
               </div>
             </div>
           </div>

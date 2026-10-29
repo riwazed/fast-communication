@@ -596,6 +596,22 @@ export default function PackagesPage() {
                   <Clock className="size-3.5 text-emerald-500" />
                   <span>২৪/৭ টেকনিক্যাল সাপোর্ট ও লোকাল সার্ভিস</span>
                 </span>
+                <span className="hidden sm:inline">•</span>
+                <span className="flex items-center gap-2">
+                  <Link
+                    href="/terms-and-conditions"
+                    className="underline-offset-4 hover:text-primary hover:underline transition-colors"
+                  >
+                    শর্তাবলী
+                  </Link>
+                  <span>ও</span>
+                  <Link
+                    href="/refund-policy"
+                    className="underline-offset-4 hover:text-primary hover:underline transition-colors"
+                  >
+                    রিফান্ড নীতি
+                  </Link>
+                </span>
               </div>
             </div>
           </div>
