@@ -22,22 +22,41 @@ import {
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import JsonLd from "@/components/JsonLd";
 import { CONTACT_INFO, LEGAL_NAV_LINKS } from "@/lib/navigation";
+import { buildPageMetadata, getBreadcrumbJsonLd, SITE_URL } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "আমাদের সম্পর্কে | ফাস্ট কমিউনিকেশন শেরপুর",
   description:
-    "ফাস্ট কমিউনিকেশন — শেরপুর জেলার শীর্ষস্থানীয় ফাইবার অপটিক ব্রডব্যান্ড ইন্টারনেট সেবা প্রদানকারী প্রতিষ্ঠান। আমাদের লক্ষ্য, ভিশন, প্রযুক্তি, সরকারি লাইসেন্স ও গ্রাহক সেবার বিস্তারিত জানুন।",
+    "ফাস্ট কমিউনিকেশন — শেরপুর জেলার ফাইবার অপটিক ব্রডব্যান্ড ইন্টারনেট সেবা প্রদানকারী প্রতিষ্ঠান (তেরাবাজার, শেরপুর-২১০০ | TIN: 880092407015)। আমাদের লক্ষ্য, ভিশন, প্রযুক্তি, সরকারি লাইসেন্স ও গ্রাহক সেবার বিস্তারিত জানুন।",
+  path: "/about-us",
   keywords: [
     "About Fast Communication",
     "Fast Communication Sherpur",
-    "Best ISP in Sherpur",
+    "ISP in Sherpur",
     "শেরপুর ইন্টারনেট সেবা",
     "ফাস্ট কমিউনিকেশন সম্পর্কে",
     "শেরপুর ব্রডব্যান্ড আইএসপি",
   ],
-};
+});
+
+const ABOUT_JSON_LD = [
+  getBreadcrumbJsonLd([
+    { name: "হোম", path: "/" },
+    { name: "আমাদের সম্পর্কে", path: "/about-us" },
+  ]),
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "আমাদের সম্পর্কে | ফাস্ট কমিউনিকেশন শেরপুর",
+    url: `${SITE_URL}/about-us`,
+    mainEntity: {
+      "@id": `${SITE_URL}/#organization`,
+    },
+  },
+];
 
 const STATS = [
   {
@@ -159,6 +178,7 @@ const CORE_VALUES = [
 export default function AboutUsPage() {
   return (
     <div className="relative min-h-screen py-10 sm:py-14 lg:py-20">
+      <JsonLd data={ABOUT_JSON_LD} />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-14 sm:gap-18 lg:gap-24">
         {/* =========================================================================
             BREADCRUMBS & TOP NAV

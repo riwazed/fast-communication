@@ -4,17 +4,19 @@ import LegalPageLayout, {
   type LegalSection,
 } from "@/components/LegalPageLayout";
 import { CONTACT_INFO, LEGAL_CREDENTIALS } from "@/lib/navigation";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "শর্তাবলী ও নিয়মাবলী (Terms & Conditions) | ফাস্ট কমিউনিকেশন শেরপুর",
   description:
     "ফাস্ট কমিউনিকেশন শেরপুরের ইন্টারনেট সংযোগ, অপটিক্যাল ফাইবার সরঞ্জাম, মাসিক বিল পরিশোধ এবং গ্রহণযোগ্য ব্যবহারের শর্তাবলী ও নিয়মাবলী (Terms & Conditions)।",
+  path: "/terms-and-conditions",
   keywords: [
     "Fast Communication Terms and Conditions",
     "শর্তাবলী ফাস্ট কমিউনিকেশন",
     "Sherpur Broadband Terms of Service",
   ],
-};
+});
 
 const HIGHLIGHTS: LegalHighlight[] = [
   {
@@ -132,4 +134,3 @@ export default function TermsAndConditionsPage() {
     />
   );
 }
-

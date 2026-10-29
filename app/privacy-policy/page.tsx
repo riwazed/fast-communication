@@ -4,17 +4,19 @@ import LegalPageLayout, {
   type LegalSection,
 } from "@/components/LegalPageLayout";
 import { CONTACT_INFO, LEGAL_CREDENTIALS } from "@/lib/navigation";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "গোপনীয়তা নীতি (Privacy Policy) | ফাস্ট কমিউনিকেশন শেরপুর",
   description:
     "ফাস্ট কমিউনিকেশন শেরপুরের গোপনীয়তা নীতি (Privacy Policy)। গ্রাহকের ব্যক্তিগত তথ্য, এনআইডি যাচাইকরণ, অনলাইন পেমেন্ট নিরাপত্তা ও ডেটা সুরক্ষার বিস্তারিত নিয়মাবলী।",
+  path: "/privacy-policy",
   keywords: [
     "Fast Communication Privacy Policy",
     "গোপনীয়তা নীতি ফাস্ট কমিউনিকেশন",
     "Sherpur ISP Privacy Policy",
   ],
-};
+});
 
 const HIGHLIGHTS: LegalHighlight[] = [
   {
@@ -137,4 +139,3 @@ export default function PrivacyPolicyPage() {
     />
   );
 }
-

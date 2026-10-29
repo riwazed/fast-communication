@@ -311,9 +311,9 @@ export default function BestSellings() {
                 <HelpCircle className="size-4" />
                 <span>প্যাকেজ নির্বাচন নির্দেশিকা</span>
               </div>
-              <h4 className="mt-2 text-lg sm:text-xl font-bold text-foreground">
+              <h3 className="mt-2 text-lg sm:text-xl font-bold text-foreground">
                 কোন ইন্টারনেট স্পিডটি আপনার জন্য সবচেয়ে উপযুক্ত?
-              </h4>
+              </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 সাধারণ ফেসবুক ও ব্রাউজিংয়ের জন্য ১০ Mbps যথেষ্ট। তবে ঘরে যদি
                 একাধিক স্মার্ট টিভি থাকে কিংবা নিয়মিত ফ্রিল্যান্সিং ও 4K ভিডিও

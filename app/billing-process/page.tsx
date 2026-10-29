@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
 import ComingSoon from "@/components/ComingSoon";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "বিল পরিশোধ প্রক্রিয়া | ফাস্ট কমিউনিকেশন শেরপুর",
   description:
     "ফাস্ট কমিউনিকেশন শেরপুরের ডিজিটাল বিল পরিশোধ প্রক্রিয়া, বিকাশ, নগদ ও কার্ড পেমেন্ট গাইডলাইন। ঘরে বসে সহজে ইন্টারনেট বিল জমা দিন।",
+  path: "/billing-process",
+  noIndex: true,
   keywords: [
     "Fast Communication Billing",
     "Sherpur internet bill payment",
     "ফাস্ট কমিউনিকেশন বিল পরিশোধ",
     "শেরপুর ব্রডব্যান্ড বিল বিকাশ",
   ],
-};
+});
 
 export default function BillingProcessPage() {
   return (

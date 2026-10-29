@@ -4,17 +4,19 @@ import LegalPageLayout, {
   type LegalSection,
 } from "@/components/LegalPageLayout";
 import { CONTACT_INFO, LEGAL_CREDENTIALS } from "@/lib/navigation";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "রিফান্ড ও বাতিলকরণ নীতি (Refund Policy) | ফাস্ট কমিউনিকেশন শেরপুর",
   description:
     "ফাস্ট কমিউনিকেশন শেরপুরের রিফান্ড, রিটার্ন ও সংযোগ বাতিলকরণ নীতি (Refund & Cancellation Policy)। অনলাইন পেমেন্ট, ডুপ্লিকেট বিল ও সংযোগ চার্জ ফেরতের নিয়মাবলী।",
+  path: "/refund-policy",
   keywords: [
     "Fast Communication Refund Policy",
     "রিফান্ড নীতি ফাস্ট কমিউনিকেশন",
     "Sherpur ISP Refund and Cancellation Policy",
   ],
-};
+});
 
 const HIGHLIGHTS: LegalHighlight[] = [
   {
@@ -124,4 +126,3 @@ export default function RefundPolicyPage() {
     />
   );
 }
-

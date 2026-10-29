@@ -22,12 +22,15 @@ import { buttonVariants } from "@/components/ui/button";
 import { CONTACT_INFO } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 import PackagesFilterClient from "@/components/PackagesFilterClient";
+import JsonLd from "@/components/JsonLd";
 import { ALL_PACKAGES, INCLUDED_SERVICES, PACKAGE_FAQS } from "@/lib/packages";
+import { buildPageMetadata, getBreadcrumbJsonLd, SITE_URL } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "ইন্টারনেট প্যাকেজসমূহ | ফাস্ট কমিউনিকেশন শেরপুর",
+export const metadata: Metadata = buildPageMetadata({
+  title: "ইন্টারনেট প্যাকেজসমূহ ও মূল্য তালিকা | ফাস্ট কমিউনিকেশন শেরপুর",
   description:
-    "শেরপুর সদরে ফাস্ট কমিউনিকেশনের ৯টি প্রিমিয়াম ফাইবার অপটিক ইন্টারনেট প্যাকেজ। ৭ Mbps থেকে ৭৫ Mbps পর্যন্ত সাশ্রয়ী বাসাবাড়ি, ফ্রিল্যান্সিং, গেমিং ও করপোরেট ব্রডব্যান্ড সংযোগ। ১০০% আনলিমিটেড স্পিড ও ২০০+ Mbps BDIX ক্যাশ।",
+    "শেরপুর সদরে ফাস্ট কমিউনিকেশনের ৯টি ফাইবার অপটিক ইন্টারনেট প্যাকেজ (৳৬০০ থেকে ৳৩৫০০/মাস)। ৭ Mbps থেকে ৭৫ Mbps পর্যন্ত বাসাবাড়ি, ফ্রিল্যান্সিং, গেমিং ও করপোরেট ব্রডব্যান্ড সংযোগ। ১০০% আনলিমিটেড স্পিড ও ২০০+ Mbps BDIX ক্যাশ।",
+  path: "/packages",
   keywords: [
     "Fast Communication Packages",
     "Internet packages Sherpur",
@@ -37,7 +40,45 @@ export const metadata: Metadata = {
     "শেরপুর ব্রডব্যান্ড বিল ও স্পিড",
     "Sherpur fiber internet price",
   ],
-};
+});
+
+const PACKAGES_JSON_LD = [
+  getBreadcrumbJsonLd([
+    { name: "হোম", path: "/" },
+    { name: "ইন্টারনেট প্যাকেজসমূহ", path: "/packages" },
+  ]),
+  {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    name: "ফাস্ট কমিউনিকেশন শেরপুর ফাইবার ইন্টারনেট প্যাকেজসমূহ",
+    url: `${SITE_URL}/packages`,
+    itemListElement: ALL_PACKAGES.map((pkg, idx) => ({
+      "@type": "Offer",
+      position: idx + 1,
+      name: `${pkg.name} (${pkg.speed} ${pkg.speedUnit})`,
+      description: pkg.description,
+      price: pkg.priceNumber.toString(),
+      priceCurrency: "BDT",
+      availability: "https://schema.org/InStock",
+      url: `${SITE_URL}/packages`,
+      seller: {
+        "@id": `${SITE_URL}/#organization`,
+      },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: PACKAGE_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  },
+];
 
 const HIGHLIGHTS = [
   {
@@ -84,6 +125,7 @@ const HIGHLIGHTS = [
 export default function PackagesPage() {
   return (
     <div className="relative min-h-screen overflow-hidden">
+      <JsonLd data={PACKAGES_JSON_LD} />
       {/* =============================================================
           1. Hero Header & Context Section
           ============================================================= */}
@@ -137,6 +179,7 @@ export default function PackagesPage() {
           {/* =============================================================
               Highlights 4-Grid Strip
               ============================================================= */}
+          <h2 className="sr-only">প্যাকেজের মূল বৈশিষ্ট্যসমূহ</h2>
           <div className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {HIGHLIGHTS.map((item) => {
               const Icon = item.icon;
@@ -326,9 +369,9 @@ export default function PackagesPage() {
                 <div className="flex items-start justify-between gap-2 border-b border-border/40 pb-2.5">
                   <div>
                     <div className="flex items-center gap-1.5">
-                      <h4 className="font-bold text-sm sm:text-base text-foreground">
+                      <h3 className="font-bold text-sm sm:text-base text-foreground">
                         {pkg.name}
-                      </h4>
+                      </h3>
                       {pkg.isPopular && (
                         <span className="rounded-full bg-primary text-primary-foreground text-[10px] font-bold px-2 py-0.5">
                           পপুলার
@@ -452,9 +495,9 @@ export default function PackagesPage() {
                 <Tv className="size-6" />
               </div>
               <div>
-                <h4 className="text-base sm:text-lg font-bold text-foreground">
+                <h3 className="text-base sm:text-lg font-bold text-foreground">
                   আমাদের এক্সক্লুসিভ লাইভ টিভি অ্যাপস ডাউনলোড করুন
-                </h4>
+                </h3>
                 <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
                   Appolo TV ও StreamX লাইভ টিভি অ্যাপ দিয়ে ১০০+ চ্যানেল দেখুন
                   বিনামূল্যে।

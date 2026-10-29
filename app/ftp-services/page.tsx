@@ -21,13 +21,16 @@ import {
 } from "lucide-react";
 import { FTP_SERVERS, LIVE_TV_SERVERS } from "@/lib/ftp";
 import FtpDirectoryClient from "@/components/FtpDirectoryClient";
+import JsonLd from "@/components/JsonLd";
 import { CONTACT_INFO } from "@/lib/navigation";
+import { buildPageMetadata, getBreadcrumbJsonLd } from "@/lib/seo";
 import { Badge } from "@/components/ui/badge";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "FTP মুভি সার্ভার ও লাইভ টিভি | ফাস্ট কমিউনিকেশন শেরপুর",
   description:
-    "ফাস্ট কমিউনিকেশন শেরপুর ব্রডব্যান্ড নেটওয়ার্কের সেরা হাই-স্পিড FTP মুভি সার্ভার, লাইভ টিভি চ্যানেল এবং এক্সক্লুসিভ লাইভ টিভি অ্যাপস (AppoloTV ও StreamX) ডাউনলোড করুন। ২০০+ Mbps পর্যন্ত বাফারিংহীন লাইভ স্ট্রিমিং।",
+    "ফাস্ট কমিউনিকেশন শেরপুর ব্রডব্যান্ড নেটওয়ার্কের হাই-স্পিড FTP মুভি সার্ভার, লাইভ টিভি চ্যানেল এবং এক্সক্লুসিভ লাইভ টিভি অ্যাপস (AppoloTV ও StreamX) ডাউনলোড করুন। ২০০+ Mbps পর্যন্ত বাফারিংহীন লাইভ স্ট্রিমিং।",
+  path: "/ftp-services",
   keywords: [
     "Fast Communication FTP",
     "FTP Servers Sherpur",
@@ -39,11 +42,17 @@ export const metadata: Metadata = {
     "Circle FTP",
     "ফাস্ট কমিউনিকেশন এফটিপি",
   ],
-};
+});
+
+const FTP_BREADCRUMB_JSON_LD = getBreadcrumbJsonLd([
+  { name: "হোম", path: "/" },
+  { name: "FTP সাপোর্ট ও লাইভ টিভি", path: "/ftp-services" },
+]);
 
 export default function FtpServicesPage() {
   return (
     <div className="relative min-h-screen py-10 sm:py-14 lg:py-20">
+      <JsonLd data={FTP_BREADCRUMB_JSON_LD} />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-12 sm:gap-16 lg:gap-20">
         {/* =========================================================================
             BREADCRUMBS & TOP NAV
@@ -337,9 +346,9 @@ export default function FtpServicesPage() {
                       <ShieldCheck className="size-5" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-foreground">
+                      <h3 className="text-sm font-bold text-foreground">
                         কীভাবে অ্যান্ড্রয়েড ডিভাইসে ইনস্টল করবেন?
-                      </h4>
+                      </h3>
                       <p className="text-xs text-muted-foreground mt-0.5">
                         ১. উপরের বাটনে ক্লিক করে APK ডাউনলোড করুন → ২. ডিভাইসের
                         Settings &gt; Security-তে গিয়ে &quot;Install from

@@ -15,12 +15,14 @@ import {
   BadgeCheck,
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import JsonLd from "@/components/JsonLd";
 import {
   CONTACT_INFO,
   LEGAL_CREDENTIALS,
   LEGAL_NAV_LINKS,
   type LegalLinkItem,
 } from "@/lib/navigation";
+import { getBreadcrumbJsonLd } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 export interface LegalHighlight {
@@ -71,9 +73,18 @@ export default function LegalPageLayout({
   sections,
 }: LegalPageLayoutProps) {
   const HeaderIcon = POLICY_ICONS[activeId];
+  const activeItem = LEGAL_NAV_LINKS.find((item) => item.id === activeId);
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "হোম", path: "/" },
+    {
+      name: activeItem?.name || englishTitle,
+      path: activeItem?.href || "/",
+    },
+  ]);
 
   return (
     <div className="relative min-h-screen py-10 sm:py-14 lg:py-20">
+      <JsonLd data={breadcrumbJsonLd} />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-10 sm:gap-14">
         {/* =============================================================
             1. Breadcrumbs & Hero Header
@@ -93,7 +104,7 @@ export default function LegalPageLayout({
             <span className="text-muted-foreground">আইনি নীতিমালা</span>
             <ChevronRight className="size-3.5 text-muted-foreground/60" />
             <span className="font-semibold text-foreground">
-              {LEGAL_NAV_LINKS.find((item) => item.id === activeId)?.name}
+              {activeItem?.name}
             </span>
           </nav>
 
@@ -126,7 +137,10 @@ export default function LegalPageLayout({
               </div>
               <div className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 backdrop-blur-sm">
                 <BadgeCheck className="size-4 text-emerald-500 shrink-0" />
-                <span>TIN: {LEGAL_CREDENTIALS.tin} • লাইসেন্স: {LEGAL_CREDENTIALS.tradeLicenseNo}</span>
+                <span>
+                  TIN: {LEGAL_CREDENTIALS.tin} • লাইসেন্স:{" "}
+                  {LEGAL_CREDENTIALS.tradeLicenseNo}
+                </span>
               </div>
             </div>
           </header>
@@ -171,7 +185,10 @@ export default function LegalPageLayout({
                   আইনি নীতিমালাসমূহ
                 </h2>
               </div>
-              <nav aria-label="আইনি পাতা নেভিগেশন" className="flex flex-col gap-1.5">
+              <nav
+                aria-label="আইনি পাতা নেভিগেশন"
+                className="flex flex-col gap-1.5"
+              >
                 {LEGAL_NAV_LINKS.map((item) => {
                   const Icon = POLICY_ICONS[item.id];
                   const isActive = item.id === activeId;
@@ -190,7 +207,9 @@ export default function LegalPageLayout({
                         <Icon
                           className={cn(
                             "size-4 shrink-0",
-                            isActive ? "text-primary-foreground" : "text-primary",
+                            isActive
+                              ? "text-primary-foreground"
+                              : "text-primary",
                           )}
                         />
                         <span>{item.name}</span>
@@ -234,7 +253,7 @@ export default function LegalPageLayout({
             </div>
 
             {/* Official Office & Support Card */}
-            <div className="rounded-2xl border border-primary/25 bg-primary/5 p-5 backdrop-blur-xl space-y-3 text-xs">
+            <address className="not-italic rounded-2xl border border-primary/25 bg-primary/5 p-5 backdrop-blur-xl space-y-3 text-xs">
               <div className="font-bold text-sm text-foreground flex items-center gap-2">
                 <ShieldCheck className="size-4 text-primary shrink-0" />
                 <span>অফিসিয়াল যোগাযোগ</span>
@@ -256,7 +275,7 @@ export default function LegalPageLayout({
                 TIN: {LEGAL_CREDENTIALS.tin} • License ID:{" "}
                 {LEGAL_CREDENTIALS.tradeLicenseId}
               </div>
-            </div>
+            </address>
           </aside>
 
           {/* Right / Main Policy Clauses */}
@@ -316,8 +335,8 @@ export default function LegalPageLayout({
                   নীতিমালা বিষয়ে কোনো প্রশ্ন বা সহায়তা প্রয়োজন?
                 </h3>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  আমাদের শেরপুর সদর অফিসে ({CONTACT_INFO.address}) সরাসরি যোগাযোগ
-                  করুন অথবা ২৪/৭ হেল্পলাইনে কল করুন।
+                  আমাদের শেরপুর সদর অফিসে ({CONTACT_INFO.address}) সরাসরি
+                  যোগাযোগ করুন অথবা ২৪/৭ হেল্পলাইনে কল করুন।
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto shrink-0">
@@ -349,4 +368,3 @@ export default function LegalPageLayout({
     </div>
   );
 }
-

@@ -153,7 +153,7 @@ export default function Footer() {
             <h3 className="text-sm font-bold tracking-wider text-foreground uppercase">
               যোগাযোগ ও সহায়তা
             </h3>
-            <div className="flex flex-col gap-3.5 text-sm text-muted-foreground">
+            <address className="not-italic flex flex-col gap-3.5 text-sm text-muted-foreground">
               {/* Location */}
               <div className="flex items-start gap-2.5">
                 <MapPin className="size-4.5 text-primary shrink-0 mt-0.5" />
@@ -207,7 +207,7 @@ export default function Footer() {
                   <ArrowUpRight className="size-3.5" />
                 </Link>
               </div>
-            </div>
+            </address>
           </div>
         </div>
 
@@ -221,9 +221,9 @@ export default function Footer() {
                 <Lock className="size-3.5" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-foreground">
+                <h3 className="text-sm font-bold text-foreground">
                   নিরাপদ ডিজিটাল পেমেন্ট মাধ্যমসমূহ
-                </h4>
+                </h3>
                 <p className="text-xs text-muted-foreground">
                   বিকাশ, নগদ, রকেট, ভিসা, মাস্টারকার্ড ও প্রধান ব্যাংকিং কার্ডের
                   মাধ্যমে ইনস্ট্যান্ট বিল পরিশোধ

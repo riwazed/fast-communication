@@ -284,9 +284,9 @@ export default function Services() {
                 <Tv className="size-6" />
               </div>
               <div>
-                <h4 className="text-base sm:text-lg font-bold text-foreground">
+                <h3 className="text-base sm:text-lg font-bold text-foreground">
                   আপনার প্রয়োজন অনুযায়ী সেরা সেবাটি বেছে নিতে চান?
-                </h4>
+                </h3>
                 <p className="mt-1 text-xs sm:text-sm text-muted-foreground max-w-xl">
                   বাসার জন্য অপটিক্যাল ফাইবার, প্রাতিষ্ঠানিক ডেডিকেটেড ইন্টারনেট
                   কিংবা লোকাল FTP সংযোগ - আমাদের অভিজ্ঞ টিম আপনাকে সঠিক প্যাকেজ

@@ -4,17 +4,19 @@ import LegalPageLayout, {
   type LegalSection,
 } from "@/components/LegalPageLayout";
 import { CONTACT_INFO } from "@/lib/navigation";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "কুকি নীতি (Cookie Policy) | ফাস্ট কমিউনিকেশন শেরপুর",
   description:
     "ফাস্ট কমিউনিকেশন শেরপুর ওয়েবসাইট ও কাস্টমার পোর্টালের কুকি নীতি (Cookie Policy)। ব্রাউজার কুকি, থিম প্রেফারেন্স ও সেশন সুরক্ষার বিস্তারিত তথ্য।",
+  path: "/cookie-policy",
   keywords: [
     "Fast Communication Cookie Policy",
     "কুকি নীতি ফাস্ট কমিউনিকেশন",
     "Website Cookie Policy Sherpur ISP",
   ],
-};
+});
 
 const HIGHLIGHTS: LegalHighlight[] = [
   {
@@ -102,4 +104,3 @@ export default function CookiePolicyPage() {
     />
   );
 }
-

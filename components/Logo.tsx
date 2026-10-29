@@ -14,7 +14,7 @@ export default function Logo({ className, priority = true }: LogoProps) {
       {/* Light Mode Logo */}
       <Image
         src={LogoLightMode}
-        alt="ফাস্ট কমিউনিকেশন"
+        alt="ফাস্ট কমিউনিকেশন (Fast Communication) — শেরপুর ব্রডব্যান্ড ইন্টারনেট"
         priority={priority}
         className={cn("h-10 w-auto object-contain dark:hidden", className)}
       />
@@ -22,7 +22,7 @@ export default function Logo({ className, priority = true }: LogoProps) {
       {/* Dark Mode Logo */}
       <Image
         src={LogoDarkMode}
-        alt="ফাস্ট কমিউনিকেশন"
+        alt="ফাস্ট কমিউনিকেশন (Fast Communication) — শেরপুর ব্রডব্যান্ড ইন্টারনেট"
         priority={priority}
         className={cn(
           "hidden h-10 w-auto object-contain dark:block",

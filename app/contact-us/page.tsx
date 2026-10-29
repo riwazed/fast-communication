@@ -12,13 +12,20 @@ import {
   Headphones,
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
-import { CONTACT_INFO, LEGAL_CREDENTIALS, PORTAL_LINK } from "@/lib/navigation";
+import JsonLd from "@/components/JsonLd";
+import {
+  CONTACT_INFO,
+  LEGAL_CREDENTIALS,
+  PORTAL_LINK,
+} from "@/lib/navigation";
+import { buildPageMetadata, getBreadcrumbJsonLd, SITE_URL } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
-export const metadata: Metadata = {
-  title: "যোগাযোগ করুন | ফাস্ট কমিউনিকেশন শেরপুর",
+export const metadata: Metadata = buildPageMetadata({
+  title: "যোগাযোগ করুন — অফিস ঠিকানা ও হটলাইন | ফাস্ট কমিউনিকেশন শেরপুর",
   description:
-    "ফাস্ট কমিউনিকেশন শেরপুর অফিসের ঠিকানা ও ফোন নম্বর: তেরাবাজার, শেরপুর টাউন, শেরপুর সদর, শেরপুর-২১০০ | হটলাইন: +8801901173340। নতুন ইন্টারনেট সংযোগ ও ২৪/৭ সাপোর্টের জন্য সরাসরি কল করুন।",
+    "ফাস্ট কমিউনিকেশন শেরপুর অফিসের ঠিকানা ও ফোন নম্বর: তেরাবাজার, শেরপুর টাউন, শেরপুর সদর, শেরপুর-২১০০ | হটলাইন: +8801901173340। নতুন ব্রডব্যান্ড ইন্টারনেট সংযোগ ও ২৪/৭ সাপোর্টের জন্য সরাসরি কল করুন।",
+  path: "/contact-us",
   keywords: [
     "Fast Communication Contact",
     "Sherpur ISP contact number",
@@ -27,13 +34,32 @@ export const metadata: Metadata = {
     "তেরাবাজার শেরপুর ইন্টারনেট",
     "+8801901173340",
   ],
-};
+});
 
-const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/i4i8NHebfGcyZ8cn6";
+const CONTACT_JSON_LD = [
+  getBreadcrumbJsonLd([
+    { name: "হোম", path: "/" },
+    { name: "যোগাযোগ করুন", path: "/contact-us" },
+  ]),
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "যোগাযোগ করুন | ফাস্ট কমিউনিকেশন শেরপুর",
+    url: `${SITE_URL}/contact-us`,
+    mainEntity: {
+      "@id": `${SITE_URL}/#organization`,
+    },
+  },
+];
+
+const GOOGLE_MAPS_URL =
+  "https://www.google.com/maps/search/?api=1&query=" +
+  encodeURIComponent("তেরাবাজার, শেরপুর টাউন, শেরপুর সদর, শেরপুর-২১০০");
 
 export default function ContactUsPage() {
   return (
     <div className="relative min-h-screen py-10 sm:py-14 lg:py-20">
+      <JsonLd data={CONTACT_JSON_LD} />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-12 sm:gap-16">
         {/* =============================================================
             1. Breadcrumb & Hero Header
@@ -41,7 +67,7 @@ export default function ContactUsPage() {
         <div>
           <nav
             aria-label="ব্রেডক্রাম্ব"
-            className="flex items-center gap-1.5 text-xs text-muted-foreground"
+            className="flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground"
           >
             <Link
               href="/"
@@ -54,7 +80,7 @@ export default function ContactUsPage() {
           </nav>
 
           <header className="mt-8 max-w-3xl mx-auto text-center flex flex-col items-center gap-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs sm:text-sm font-semibold text-primary backdrop-blur-sm">
               <Sparkles className="size-3.5 text-brand-orange shrink-0" />
               <span>২৪/৭ হেল্পডেস্ক ও কাস্টমার সাপোর্ট</span>
             </div>
@@ -158,7 +184,7 @@ export default function ContactUsPage() {
                 </span>
               </div>
 
-              <div>
+              <address className="not-italic">
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                   অফিস ঠিকানা
                 </p>
@@ -169,7 +195,7 @@ export default function ContactUsPage() {
                   সরাসরি আমাদের শেরপুর সদর অফিসে এসে নতুন সংযোগ নিবন্ধন, প্যাকেজ
                   পরিবর্তন অথবা সরাসরি বিল সংক্রান্ত সেবা গ্রহণ করতে পারেন।
                 </p>
-              </div>
+              </address>
 
               <ul className="space-y-2 pt-3 border-t border-border/50 text-xs text-foreground/85">
                 <li className="flex items-center gap-2">
