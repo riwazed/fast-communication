@@ -297,10 +297,25 @@
   will-change: transform, opacity;
 }
 
+@keyframes fiber-progress {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+
+.animate-fiber-progress {
+  animation: fiber-progress 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-bg-drift-1,
   .animate-bg-drift-2,
-  .animate-bg-pulse-soft {
+  .animate-bg-pulse-soft,
+  .animate-fiber-progress {
     animation: none !important;
   }
 }

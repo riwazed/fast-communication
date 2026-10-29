@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Anek_Bangla } from "next/font/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
@@ -6,6 +7,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SiteBackground from "@/components/SiteBackground";
+import PageLoading from "@/components/PageLoading";
+import RouteTransitionLoader from "@/components/RouteTransitionLoader";
 
 const anekBangla = Anek_Bangla({
   variable: "--font-anek-bangla",
@@ -37,7 +40,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <TooltipProvider>
             <SiteBackground />
             <Navbar />
-            <main className="flex-1 relative z-0">{children}</main>
+            <main className="flex-1 relative z-0">
+              <Suspense fallback={null}>
+                <RouteTransitionLoader />
+              </Suspense>
+              <Suspense fallback={<PageLoading />}>{children}</Suspense>
+            </main>
             <Footer />
           </TooltipProvider>
         </ThemeProvider>

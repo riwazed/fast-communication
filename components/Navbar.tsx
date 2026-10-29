@@ -1,6 +1,7 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
-import { LogIn } from "lucide-react";
+import { LogIn, Menu } from "lucide-react";
 import ActiveLink from "./ActiveLink";
 import SideBar from "./SideBar";
 import { ThemeToggle } from "./theme-toggle";
@@ -28,11 +29,26 @@ export default function Navbar() {
           className="hidden items-center gap-1 lg:flex"
           aria-label="মূল মেনু"
         >
-          {MAIN_NAV_LINKS.map((link) => (
-            <ActiveLink key={link.id} href={link.href}>
-              {link.name}
-            </ActiveLink>
-          ))}
+          <Suspense
+            fallback={MAIN_NAV_LINKS.map((link) => (
+              <Link
+                key={link.id}
+                href={link.href}
+                className={cn(
+                  buttonVariants({ variant: "ghost", size: "default" }),
+                  "relative rounded-lg px-3.5 py-1.5 text-[15px] font-medium text-foreground/80 transition-all duration-200 hover:bg-primary/10 hover:text-primary",
+                )}
+              >
+                {link.name}
+              </Link>
+            ))}
+          >
+            {MAIN_NAV_LINKS.map((link) => (
+              <ActiveLink key={link.id} href={link.href}>
+                {link.name}
+              </ActiveLink>
+            ))}
+          </Suspense>
         </nav>
 
         {/* Action Controls & Mobile Trigger */}
@@ -57,7 +73,23 @@ export default function Navbar() {
           </a>
 
           {/* Mobile Sidebar Trigger */}
-          <SideBar />
+          <Suspense
+            fallback={
+              <div className="lg:hidden">
+                <span
+                  aria-hidden="true"
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "icon" }),
+                    "size-9 rounded-lg border-border/70",
+                  )}
+                >
+                  <Menu className="size-5" />
+                </span>
+              </div>
+            }
+          >
+            <SideBar />
+          </Suspense>
         </div>
       </div>
     </header>
