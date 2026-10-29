@@ -10,9 +10,10 @@ import {
   CheckCircle2,
   Tv,
   Layers,
+  MapPin,
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
-import { PORTAL_LINK } from "@/lib/navigation";
+import { CONTACT_INFO, PORTAL_LINK } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 export interface ComingSoonProps {
@@ -160,13 +161,24 @@ export default function ComingSoon({
             </Link>
           </div>
 
-          {/* Helpline Footer Note */}
+          {/* Helpline & Office Address Footer Note */}
           {showHelplineCta && (
-            <div className="mt-6 inline-flex items-center gap-2 rounded-xl bg-primary/5 px-4 py-2 text-xs text-foreground/80 border border-primary/10">
-              <PhoneCall className="size-3.5 text-brand-orange shrink-0" />
-              <span>
-                জরুরি যেকোনো সহায়তার জন্য সরাসরি আমাদের শেরপুর অফিসে কল করুন।
-              </span>
+            <div className="mt-6 rounded-2xl bg-primary/5 p-4 text-xs text-foreground/85 border border-primary/15 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
+              <div className="flex items-center gap-2">
+                <PhoneCall className="size-4 text-brand-orange shrink-0" />
+                <span>হটলাইন:</span>
+                <a
+                  href={CONTACT_INFO.phoneHref}
+                  className="font-mono font-bold text-primary hover:underline text-sm"
+                >
+                  {CONTACT_INFO.phone}
+                </a>
+              </div>
+              <span className="hidden sm:inline text-border">•</span>
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <MapPin className="size-4 text-primary shrink-0" />
+                <span>{CONTACT_INFO.address}</span>
+              </div>
             </div>
           )}
         </div>

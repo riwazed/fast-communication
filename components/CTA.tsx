@@ -8,8 +8,10 @@ import {
   BadgeCheck,
   CheckCircle2,
   Sparkles,
+  MapPin,
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import { CONTACT_INFO } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 /**
@@ -90,17 +92,16 @@ export default function CTA() {
 
           {/* Action Buttons */}
           <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
-            <Link
-              href="/contact-us"
+            <a
+              href={CONTACT_INFO.phoneHref}
               className={cn(
                 buttonVariants({ variant: "default", size: "lg" }),
                 "w-full sm:w-auto h-12 px-8 rounded-xl text-base font-bold shadow-lg shadow-primary/25 transition-all duration-200 hover:shadow-xl hover:shadow-primary/35 hover:scale-[1.02] active:scale-[0.98]",
               )}
             >
               <PhoneCall className="size-4.5 mr-2" />
-              <span>নতুন সংযোগের জন্য যোগাযোগ</span>
-              <ArrowRight className="size-4.5 ml-2" />
-            </Link>
+              <span>কল করুন: {CONTACT_INFO.phone}</span>
+            </a>
 
             <Link
               href="/packages"
@@ -110,7 +111,16 @@ export default function CTA() {
               )}
             >
               <span>প্যাকেজসমূহ যাচাই করুন</span>
+              <ArrowRight className="size-4.5 ml-2" />
             </Link>
+          </div>
+
+          {/* Office Location Pill */}
+          <div className="mt-5 flex items-center justify-center">
+            <div className="inline-flex items-center gap-2 rounded-xl border border-border/60 bg-muted/40 px-4 py-2 text-xs sm:text-sm text-muted-foreground">
+              <MapPin className="size-4 text-primary shrink-0" />
+              <span>অফিস: {CONTACT_INFO.address}</span>
+            </div>
           </div>
 
           {/* =============================================================

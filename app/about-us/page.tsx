@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { CONTACT_INFO } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -310,14 +311,18 @@ export default function AboutUsPage() {
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-border/60 flex items-center justify-between">
-              <span className="text-xs text-muted-foreground font-mono">
-                Sherpur Sadar, Sherpur District, Mymensingh Division
-              </span>
-              <div className="flex items-center gap-1.5 text-xs font-semibold text-primary">
-                <MapPin className="size-3.5" />
-                <span>শেরপুর সদর</span>
+            <div className="mt-8 pt-6 border-t border-border/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+              <div className="flex items-start sm:items-center gap-1.5 text-xs font-medium text-foreground/90">
+                <MapPin className="size-3.5 text-primary shrink-0 mt-0.5 sm:mt-0" />
+                <span>{CONTACT_INFO.address}</span>
               </div>
+              <a
+                href={CONTACT_INFO.phoneHref}
+                className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-primary hover:underline"
+              >
+                <PhoneCall className="size-3.5 text-brand-orange shrink-0" />
+                <span>{CONTACT_INFO.phone}</span>
+              </a>
             </div>
           </div>
 
@@ -590,16 +595,16 @@ export default function AboutUsPage() {
             </p>
 
             <div className="mt-2 flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
-              <Link
-                href="/contact-us"
+              <a
+                href={CONTACT_INFO.phoneHref}
                 className={cn(
                   buttonVariants({ variant: "default", size: "lg" }),
                   "w-full sm:w-auto px-7 rounded-xl font-bold shadow-md shadow-primary/20 hover:scale-[1.02] active:scale-[0.98]",
                 )}
               >
                 <PhoneCall className="size-4 mr-2" />
-                <span>যোগাযোগ করুন</span>
-              </Link>
+                <span className="font-mono">{CONTACT_INFO.phone}</span>
+              </a>
 
               <Link
                 href="/packages"
@@ -611,6 +616,11 @@ export default function AboutUsPage() {
                 <span>প্যাকেজসমূহ দেখুন</span>
                 <ArrowRight className="size-4 ml-2" />
               </Link>
+            </div>
+
+            <div className="mt-3 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+              <MapPin className="size-3.5 text-primary shrink-0" />
+              <span>{CONTACT_INFO.address}</span>
             </div>
           </div>
         </section>

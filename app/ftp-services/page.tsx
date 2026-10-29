@@ -17,9 +17,11 @@ import {
   HelpCircle,
   AlertCircle,
   ArrowRight,
+  PhoneCall,
 } from "lucide-react";
 import { FTP_SERVERS, LIVE_TV_SERVERS } from "@/lib/ftp";
 import FtpDirectoryClient from "@/components/FtpDirectoryClient";
+import { CONTACT_INFO } from "@/lib/navigation";
 import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
@@ -436,17 +438,26 @@ export default function FtpServicesPage() {
                 <AlertCircle className="size-5 text-primary shrink-0" />
                 <p className="text-xs text-foreground/90">
                   সার্ভার সংক্রান্ত যেকোনো সমস্যায় আমাদের ২৪/৭ সাপোর্ট টিমের
-                  সাথে যোগাযোগ করুন।
+                  সাথে যোগাযোগ করুন ({CONTACT_INFO.phone})।
                 </p>
               </div>
 
-              <Link
-                href="/contact-us"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-all hover:bg-primary/90 shrink-0"
-              >
-                <span>২৪/৭ হেল্পলাইনে যোগাযোগ</span>
-                <ArrowRight className="size-3.5" />
-              </Link>
+              <div className="flex items-center gap-2 shrink-0">
+                <a
+                  href={CONTACT_INFO.phoneHref}
+                  className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-all hover:bg-primary/90"
+                >
+                  <PhoneCall className="size-3.5" />
+                  <span>কল করুন</span>
+                </a>
+                <Link
+                  href="/contact-us"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-primary/30 bg-background/80 px-3.5 py-2 text-xs font-semibold text-primary transition-all hover:bg-primary hover:text-primary-foreground"
+                >
+                  <span>যোগাযোগ পাতা</span>
+                  <ArrowRight className="size-3.5" />
+                </Link>
+              </div>
             </div>
           </div>
         </section>

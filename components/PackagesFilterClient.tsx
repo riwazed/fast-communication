@@ -15,7 +15,9 @@ import {
   Layers,
   PhoneCall,
   ArrowRight,
+  MapPin,
 } from "lucide-react";
+import { CONTACT_INFO } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 import {
   ALL_PACKAGES,
@@ -130,21 +132,36 @@ export default function PackagesFilterClient() {
           </div>
           <div>
             <p className="text-xs sm:text-sm font-semibold text-foreground leading-snug">
-              প্যাকেজ রেট নির্ধারিত • নতুন সংযোগ পেতে সরাসরি অফিসে কল করুন
+              প্যাকেজ রেট নির্ধারিত • নতুন সংযোগ পেতে কল করুন:{" "}
+              <a
+                href={CONTACT_INFO.phoneHref}
+                className="font-mono text-primary hover:underline"
+              >
+                {CONTACT_INFO.phone}
+              </a>
             </p>
-            <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-              যেকোনো প্যাকেজের সংযোগ নিতে আমাদের শেরপুর সদরের অফিসে যোগাযোগ বা
-              ফোন করুন।
+            <p className="text-xs text-muted-foreground mt-1 leading-relaxed flex items-center gap-1.5 flex-wrap">
+              <MapPin className="size-3.5 text-primary shrink-0" />
+              <span>অফিস: {CONTACT_INFO.address}</span>
             </p>
           </div>
         </div>
-        <Link
-          href="/contact-us"
-          className="w-full sm:w-auto justify-center shrink-0 inline-flex items-center gap-1.5 rounded-xl border border-primary/30 bg-background/80 px-4 py-2 text-xs font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200"
-        >
-          <span>অফিসের তথ্য দেখুন</span>
-          <ArrowRight className="size-3.5" />
-        </Link>
+        <div className="flex items-center gap-2 w-full sm:w-auto shrink-0">
+          <a
+            href={CONTACT_INFO.phoneHref}
+            className="flex-1 sm:flex-initial justify-center inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground shadow-xs hover:bg-primary/90 transition-all duration-200"
+          >
+            <PhoneCall className="size-3.5" />
+            <span>কল করুন</span>
+          </a>
+          <Link
+            href="/contact-us"
+            className="flex-1 sm:flex-initial justify-center inline-flex items-center gap-1.5 rounded-xl border border-primary/30 bg-background/80 px-4 py-2 text-xs font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200"
+          >
+            <span>যোগাযোগ পাতা</span>
+            <ArrowRight className="size-3.5" />
+          </Link>
+        </div>
       </div>
 
       {/* =============================================================

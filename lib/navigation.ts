@@ -49,7 +49,13 @@ export const MAIN_NAV_LINKS: NavItem[] = [
 export const PORTAL_LINK: NavItem = {
   id: "portal",
   name: "কাস্টমার পোর্টাল",
-  href: "https://portal.bcncommunication.net/customer/login",
+  href: "https://portal.fastcommunication.com.bd/customer/login",
   iconName: "LogIn",
   isExternal: true,
 };
+
+export const CONTACT_INFO = {
+  address: "তেরাবাজার, শেরপুর টাউন, শেরপুর সদর, শেরপুর-২১০০",
+  phone: "+8801901173340",
+  phoneHref: "tel:+8801901173340",
+} as const;

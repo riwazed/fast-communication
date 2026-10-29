@@ -12,7 +12,7 @@ import {
   Lock,
 } from "lucide-react";
 import Logo from "@/components/Logo";
-import { MAIN_NAV_LINKS, PORTAL_LINK } from "@/lib/navigation";
+import { CONTACT_INFO, MAIN_NAV_LINKS, PORTAL_LINK } from "@/lib/navigation";
 import sslPaymentGateway from "@/public/ssl-payment-gateway.png";
 
 async function CurrentYear() {
@@ -127,11 +127,16 @@ export default function Footer() {
             <h3 className="text-sm font-bold tracking-wider text-foreground uppercase">
               যোগাযোগ ও সহায়তা
             </h3>
-            <div className="flex flex-col gap-3 text-sm text-muted-foreground">
+            <div className="flex flex-col gap-3.5 text-sm text-muted-foreground">
               {/* Location */}
               <div className="flex items-start gap-2.5">
                 <MapPin className="size-4.5 text-primary shrink-0 mt-0.5" />
-                <span>শেরপুর সদর, শেরপুর জেলা, ময়মনসিংহ বিভাগ, বাংলাদেশ।</span>
+                <div>
+                  <p className="font-semibold text-foreground">অফিস ঠিকানা</p>
+                  <p className="mt-0.5 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                    {CONTACT_INFO.address}
+                  </p>
+                </div>
               </div>
 
               {/* Support Phone / Helpline */}
@@ -141,8 +146,14 @@ export default function Footer() {
                   <p className="font-semibold text-foreground">
                     ২৪/৭ হেল্পডেস্ক ও কাস্টমার কেয়ার
                   </p>
-                  <p className="text-xs text-muted-foreground">
-                    নতুন সংযোগ ও টেকনিক্যাল যেকোনো প্রয়োজনে সরাসরি যোগাযোগ করুন
+                  <a
+                    href={CONTACT_INFO.phoneHref}
+                    className="mt-0.5 inline-block font-mono text-sm font-bold text-primary transition-colors hover:underline"
+                  >
+                    {CONTACT_INFO.phone}
+                  </a>
+                  <p className="mt-0.5 text-xs text-muted-foreground">
+                    নতুন সংযোগ ও টেকনিক্যাল যেকোনো প্রয়োজনে সরাসরি কল করুন
                   </p>
                 </div>
               </div>
@@ -154,10 +165,17 @@ export default function Footer() {
               </div>
 
               {/* Quick Action Link */}
-              <div className="pt-2">
+              <div className="pt-1 flex flex-wrap items-center gap-3">
+                <a
+                  href={CONTACT_INFO.phoneHref}
+                  className="inline-flex items-center gap-1.5 rounded-lg bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                >
+                  <PhoneCall className="size-3.5" />
+                  <span>কল করুন</span>
+                </a>
                 <Link
                   href="/contact-us"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary transition-all hover:underline"
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-primary transition-all hover:underline"
                 >
                   <span>যোগাযোগ পাতায় যান</span>
                   <ArrowUpRight className="size-3.5" />
@@ -225,10 +243,18 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex items-center gap-3 text-xs">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 text-xs">
+            <a
+              href={CONTACT_INFO.phoneHref}
+              className="inline-flex items-center gap-1.5 font-mono font-medium text-foreground/90 transition-colors hover:text-primary"
+            >
+              <PhoneCall className="size-3.5 text-brand-orange" />
+              <span>{CONTACT_INFO.phone}</span>
+            </a>
+            <span className="hidden sm:inline text-border">•</span>
             <span className="inline-flex items-center gap-1.5">
               <span className="size-2 rounded-full bg-emerald-500" />
-              <span>শেরপুর জেলার সেরা ইন্টারনেট সেবা</span>
+              <span>{CONTACT_INFO.address}</span>
             </span>
           </div>
         </div>

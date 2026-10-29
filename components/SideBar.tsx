@@ -12,6 +12,7 @@ import {
   LogIn,
   Headphones,
   Sparkles,
+  MapPin,
 } from "lucide-react";
 
 import Logo from "./Logo";
@@ -25,7 +26,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { MAIN_NAV_LINKS, PORTAL_LINK, type NavItem } from "@/lib/navigation";
+import {
+  CONTACT_INFO,
+  MAIN_NAV_LINKS,
+  PORTAL_LINK,
+  type NavItem,
+} from "@/lib/navigation";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
 
@@ -163,6 +169,23 @@ export default function SideBar() {
                 <LogIn className="size-3.5" />
                 <span>{PORTAL_LINK.name}</span>
               </SheetClose>
+            </div>
+
+            {/* Quick Office & Helpline Info in Drawer */}
+            <div className="mt-3 rounded-xl border border-border/60 bg-card/60 p-3 space-y-2 text-xs">
+              <div className="flex items-start gap-2 text-muted-foreground">
+                <MapPin className="size-3.5 text-primary shrink-0 mt-0.5" />
+                <span className="leading-relaxed">{CONTACT_INFO.address}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <PhoneCall className="size-3.5 text-brand-orange shrink-0" />
+                <a
+                  href={CONTACT_INFO.phoneHref}
+                  className="font-mono font-semibold text-foreground hover:text-primary transition-colors"
+                >
+                  {CONTACT_INFO.phone}
+                </a>
+              </div>
             </div>
           </div>
 

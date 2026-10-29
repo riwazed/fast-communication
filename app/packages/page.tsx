@@ -16,8 +16,10 @@ import {
   Tv,
   CreditCard,
   Building2,
+  MapPin,
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import { CONTACT_INFO } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 import PackagesFilterClient from "@/components/PackagesFilterClient";
 import { ALL_PACKAGES, INCLUDED_SERVICES, PACKAGE_FAQS } from "@/lib/packages";
@@ -555,17 +557,16 @@ export default function PackagesPage() {
 
               {/* Action Buttons */}
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
-                <Link
-                  href="/contact-us"
+                <a
+                  href={CONTACT_INFO.phoneHref}
                   className={cn(
                     buttonVariants({ variant: "default", size: "lg" }),
                     "w-full sm:w-auto h-12 px-7 rounded-xl font-bold shadow-md shadow-primary/25 hover:shadow-lg transition-all",
                   )}
                 >
                   <PhoneCall className="size-4.5 mr-2" />
-                  <span>নতুন সংযোগের আবেদন করুন</span>
-                  <ArrowRight className="size-4.5 ml-2" />
-                </Link>
+                  <span>কল করুন: {CONTACT_INFO.phone}</span>
+                </a>
 
                 <Link
                   href="/about-us"
@@ -581,6 +582,11 @@ export default function PackagesPage() {
 
               {/* Footer Trust Note */}
               <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
+                <span className="flex items-center gap-1.5">
+                  <MapPin className="size-3.5 text-primary" />
+                  <span>{CONTACT_INFO.address}</span>
+                </span>
+                <span className="hidden sm:inline">•</span>
                 <span className="flex items-center gap-1.5">
                   <CreditCard className="size-3.5 text-primary" />
                   <span>বিকাশ ও নগদে সহজ মাসিক বিল পরিশোধ</span>
